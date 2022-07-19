@@ -9,22 +9,22 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class WebForm1 : UIWeb
+    public partial class WebForm2 : UIWeb
     {
-        private EspecialidadLogic Logic
+        private PlanLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new EspecialidadLogic();
+                    _logic = new PlanLogic();
                 }
-                return (EspecialidadLogic)_logic;
+                return (PlanLogic)_logic;
             }
         }
 
 
-        private Especialidad Entity { get; set; }
+        private Plan Entity { get; set; }
 
 
 
@@ -39,19 +39,21 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
-
+            this.idEspecialidadTextBox.Text = this.Entity.IDEspecialidad.ToString();
         }
 
 
 
-        private void LoadEntity(Especialidad esp)
+        private void LoadEntity(Plan pl)
         {
-            esp.Descripcion = this.descripcionTextBox.Text;
+            pl.Descripcion = this.descripcionTextBox.Text;
+            pl.IDEspecialidad = Int32.Parse(this.idEspecialidadTextBox.Text);
         }
 
-        private void SaveEntity(Especialidad esp)
+
+        private void SaveEntity(Plan pl)
         {
-            this.Logic.Save(esp);
+            this.Logic.Save(pl);
         }
 
 
@@ -63,12 +65,14 @@ namespace UI.Web
         protected override void ClearForm()
         {
             this.descripcionTextBox.Text = String.Empty;
+            this.idEspecialidadTextBox.Text = String.Empty;
         }
 
 
         protected override void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
+            this.idEspecialidadTextBox.Enabled = enable;
         }
 
         protected override void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -82,8 +86,9 @@ namespace UI.Web
                     break;
 
                 case FormModes.Modificacion:
-                    if (Validaciones()) { 
-                        this.Entity = new Especialidad();
+                    if (Validaciones())
+                    {
+                        this.Entity = new Plan();
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
@@ -96,7 +101,7 @@ namespace UI.Web
                 case FormModes.Alta:
                     if (Validaciones())
                     {
-                        this.Entity = new Especialidad();
+                        this.Entity = new Plan();
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
@@ -104,17 +109,18 @@ namespace UI.Web
                     }
                     break;
             }
-
         }
-
         public bool Validaciones()
         {
             descripcionValidator.Validate();
+            idEspecialidadValidator.Validate();
+            idEspecialidadIntValidator.Validate();
 
             if (!this.descripcionValidator.IsValid) return false;
+            if (!this.idEspecialidadValidator.IsValid) return false;
+            if (!this.idEspecialidadIntValidator.IsValid) return false;
             return true;
         }
-
 
     }
 }
