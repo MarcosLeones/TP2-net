@@ -3,7 +3,7 @@
 
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" 
-            SelectedRowStyle-BackColor="black" SelcetedRowStyle-ForeColor="white" DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
+            DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
             <Columns>
                  <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                  <asp:BoundField HeaderText="Apellido" DataField="Apellido" />

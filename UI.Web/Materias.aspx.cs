@@ -9,23 +9,21 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class WebForm1 : UIWeb
+    public partial class Materias : UIWeb
     {
-        private EspecialidadLogic Logic
+        private MateriaLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new EspecialidadLogic();
+                    _logic = new MateriaLogic();
                 }
-                return (EspecialidadLogic)_logic;
+                return (MateriaLogic)_logic;
             }
         }
 
-
-        private Especialidad Entity { get; set; }
-
+        private Materia Entity { get; set; }
 
 
         protected override void LoadGrid()
@@ -34,24 +32,26 @@ namespace UI.Web
             this.gridView.DataBind();
         }
 
-
         protected override void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
-
+            this.hsSemanalesTextBox.Text = this.Entity.HSSemanales.ToString();
+            this.hsTotalesTextBox.Text = this.Entity.HSTotales.ToString();
+            this.idPlanTextBox.Text = this.Entity.IDPlan.ToString();
         }
 
-
-
-        private void LoadEntity(Especialidad esp)
+        private void LoadEntity(Materia mt)
         {
-            esp.Descripcion = this.descripcionTextBox.Text;
+            mt.Descripcion = this.descripcionTextBox.Text;
+            mt.HSSemanales = Int32.Parse(this.hsSemanalesTextBox.Text);
+            mt.HSTotales = Int32.Parse(this.hsTotalesTextBox.Text);
+            mt.IDPlan = Int32.Parse(this.idPlanTextBox.Text);
         }
 
-        private void SaveEntity(Especialidad esp)
+        private void SaveEntity(Materia mt)
         {
-            this.Logic.Save(esp);
+            this.Logic.Save(mt);
         }
 
 
@@ -63,14 +63,21 @@ namespace UI.Web
         protected override void ClearForm()
         {
             this.descripcionTextBox.Text = String.Empty;
+            this.hsSemanalesTextBox.Text = String.Empty;
+            this.hsTotalesTextBox.Text = String.Empty;
+            this.idPlanTextBox.Text = String.Empty;
         }
 
 
         protected override void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
+            this.hsSemanalesTextBox.Enabled = enable;
+            this.hsTotalesTextBox.Enabled = enable;
+            this.idPlanTextBox.Enabled = enable;
         }
 
+   
         protected override void aceptarLinkButton_Click(object sender, EventArgs e)
         {
             switch (this.FormMode)
@@ -82,8 +89,9 @@ namespace UI.Web
                     break;
 
                 case FormModes.Modificacion:
-                    if (Validaciones()) { 
-                        this.Entity = new Especialidad();
+                    if (Validaciones())
+                    {
+                        this.Entity = new Materia();
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
@@ -96,7 +104,7 @@ namespace UI.Web
                 case FormModes.Alta:
                     if (Validaciones())
                     {
-                        this.Entity = new Especialidad();
+                        this.Entity = new Materia();
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
@@ -104,17 +112,28 @@ namespace UI.Web
                     }
                     break;
             }
-
         }
 
+     
         public bool Validaciones()
         {
             descripcionValidator.Validate();
+            hsSemanalesIntValidator.Validate();
+            hsSemanalesIntValidator.Validate();
+            hsTotalesValidator.Validate();
+            hsTotalesIntValidator.Validate();
+            idPlanValidator.Validate();
+            idPlanIntValidator.Validate();
 
             if (!this.descripcionValidator.IsValid) return false;
+            if (!this.hsSemanalesValidator.IsValid) return false;
+            if (!this.hsSemanalesIntValidator.IsValid) return false;
+            if (!this.hsTotalesValidator.IsValid) return false;
+            if (!this.hsTotalesIntValidator.IsValid) return false;
+            if (!this.idPlanValidator.IsValid) return false;
+            if (!this.idPlanIntValidator.IsValid) return false;
             return true;
         }
-
 
     }
 }

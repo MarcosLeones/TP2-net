@@ -52,6 +52,42 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EspecialidadDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EspecialidadDesktop.Designer.cs">
+      <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Especialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Especialidades.Designer.cs">
+      <DependentUpon>Especialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MateriaDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateriaDesktop.Designer.cs">
+      <DependentUpon>MateriaDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materias.Designer.cs">
+      <DependentUpon>Materias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanDesktop.Designer.cs">
+      <DependentUpon>PlanDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planes.Designer.cs">
+      <DependentUpon>Planes.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +102,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EspecialidadDesktop.resx">
+      <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Especialidades.resx">
+      <DependentUpon>Especialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MateriaDesktop.resx">
+      <DependentUpon>MateriaDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materias.resx">
+      <DependentUpon>Materias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanDesktop.resx">
+      <DependentUpon>PlanDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planes.resx">
+      <DependentUpon>Planes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +137,10 @@
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\DataSources\Business.Entities.Especialidad.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.Materia.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.Plan.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.EspecialidadLogic.datasource" />
     <None Include="Properties\DataSources\Business.Logic.UsuarioLogic.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

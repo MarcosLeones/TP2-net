@@ -32,7 +32,13 @@ namespace Business.Logic
 
         public void Delete(int ID)
         {
+            //Borra la especialidad
             EspecialidadData.Delete(ID);
+            
+            //Borra los planes que dependen de esa especialidad
+            PlanAdapter PlanData = new PlanAdapter();
+            PlanData.DeleteByEspecialidad(ID);
+           
         }
 
         public void Save(Especialidad esp)

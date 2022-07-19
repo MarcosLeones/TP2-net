@@ -79,7 +79,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada =
-               new Exception("Error al recuperar lista de especialidades", Ex);
+               new Exception("Error al recuperar especialidad", Ex);
                 throw ExcepcionManejada;
             }
 
@@ -172,6 +172,8 @@ namespace Data.Database
             if (esp.State == BusinessEntity.States.Deleted)
             {
                 this.Delete(esp.ID);
+                PlanAdapter DataPlan = new PlanAdapter();
+                DataPlan.DeleteByEspecialidad(esp.ID);
             }
             else if (esp.State == BusinessEntity.States.New)
             {
