@@ -31,6 +31,7 @@ namespace Data.Database
 
                     curso.ID = (int)drCursos["id_curso"];
                     curso.IDMateria = (int)drCursos["id_materia"];
+                    curso.IDComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
                     curso.cupo = (int)drCursos["cupo"];
 
