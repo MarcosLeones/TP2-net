@@ -44,9 +44,9 @@ namespace UI.Web
         private void LoadEntity(Materia mt)
         {
             mt.Descripcion = this.descripcionTextBox.Text;
-            mt.HSSemanales = Int32.Parse(this.hsSemanalesTextBox.Text);
-            mt.HSTotales = Int32.Parse(this.hsTotalesTextBox.Text);
-            mt.IDPlan = Int32.Parse(this.idPlanTextBox.Text);
+            mt.HSSemanales = int.Parse(this.hsSemanalesTextBox.Text);
+            mt.HSTotales = int.Parse(this.hsTotalesTextBox.Text);
+            mt.IDPlan = int.Parse(this.idPlanTextBox.Text);
         }
 
         private void SaveEntity(Materia mt)

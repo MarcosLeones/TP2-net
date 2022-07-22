@@ -177,13 +177,13 @@ namespace Data.Database
 
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO materias (desc_materia, hs_semanales, hs_totales, id_plan) VALUES (@desc, @hss, @hst, @id_plan) select @@identity", sqlConn);
 
-                cmdSave.Parameters.Add("@desc", SqlDbType.Int).Value = mt.Descripcion;
+                cmdSave.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = mt.Descripcion;
                 cmdSave.Parameters.Add("@hss", SqlDbType.Int).Value = mt.HSSemanales;
                 cmdSave.Parameters.Add("@hst", SqlDbType.Int).Value = mt.HSTotales;
-                cmdSave.Parameters.Add("@idPlan", SqlDbType.Int).Value = mt.IDPlan;
+                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = mt.IDPlan;
 
-                 mt.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
-                
+                mt.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+
             }
             catch (Exception ex)
             {
