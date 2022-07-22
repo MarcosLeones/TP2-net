@@ -39,10 +39,10 @@ namespace UI.Web
         protected override void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.cupoLabel.Text = this.Entity.cupo.ToString();
-            this.anioLabel.Text = this.Entity.AnioCalendario.ToString();
-            this.materiaValidator.Text = this.Entity.IDMateria.ToString();
-            this.ComisionLabel.Text = this.Entity.IDComision.ToString();
+            this.cupoTextBox.Text = this.Entity.cupo.ToString();
+            this.anioTextBox.Text = this.Entity.AnioCalendario.ToString();
+            this.materiaTextBox.Text = this.Entity.IDMateria.ToString();
+            this.comisionTextBox.Text = this.Entity.IDComision.ToString();
         }
 
 
