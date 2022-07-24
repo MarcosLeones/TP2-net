@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
-
+using System.Text.RegularExpressions;
 
 namespace UI.Desktop
 {
@@ -122,12 +122,13 @@ namespace UI.Desktop
                 return false;
             }
 
-            //FALTA VALIDAR EMAIL
-            /*if (this.txtEmail.Text.Contains('@') || this.txtEmail.Text.Contains('.'))
+            var regExEmail = new Regex("^\\S+@\\S+\\.\\S+$");
+
+            if (!regExEmail.IsMatch(this.txtEmail.Text))
             {
                 Notificar("Error", "Email Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-            }*/
+            }
 
             return true;
         }
