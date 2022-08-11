@@ -29,7 +29,7 @@ namespace Data.Database
                 {
                     Comision comi = new Comision();
 
-                    comi.ID = (int)drComisiones["id_usuario"];
+                    comi.ID = (int)drComisiones["id_comision"];
                     comi.Descripcion = (string)drComisiones["desc_comision"];
                     comi.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
                     comi.IDPlan = (int)drComisiones["id_plan"];
@@ -70,7 +70,7 @@ namespace Data.Database
 
                 if (drComisiones.Read())
                 {
-                    comi.ID = (int)drComisiones["id_usuario"];
+                    comi.ID = (int)drComisiones["id_comision"];
                     comi.Descripcion = (string)drComisiones["desc_comision"];
                     comi.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
                     comi.IDPlan = (int)drComisiones["id_plan"];
@@ -171,7 +171,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO comisones (desc_comision, anio_especialidad, id_plan) VALUES (@desc, @anio, @plan) select @@identity", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO comisiones (desc_comision, anio_especialidad, id_plan) VALUES (@desc, @anio, @plan) select @@identity", sqlConn);
 
                 cmdSave.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = comi.Descripcion;
                 cmdSave.Parameters.Add("@anio", SqlDbType.Int).Value = comi.AnioEspecialidad;
