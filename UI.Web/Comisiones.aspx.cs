@@ -46,13 +46,8 @@ namespace UI.Web
             this.descripcionTextBox.Text = this.Entity.Descripcion;
             
             PlanLogic pl = new PlanLogic();
-            List<Plan> planes = pl.GetAll();
-            ListItem i;
-            foreach (Plan p in planes)
-            {
-                i = new ListItem(p.ID.ToString(), p.Descripcion);
-                planList.Items.Add(i);
-            }
+            this.planList.DataSource = pl.GetAll();
+            this.planList.DataBind();
 
         }
 

@@ -11,6 +11,7 @@ using Business.Entities;
 using Business.Logic;
 
 
+
 namespace UI.Desktop
 {
     public partial class ComisionDesktop : ApplicationForm
@@ -30,7 +31,8 @@ namespace UI.Desktop
             Modo = modo;
             ComisionLogic cl = new ComisionLogic();
             ComisionActual = cl.GetOne(ID);
-            MapearDeDatos();
+            MapearDeDatos();           
+            
         }
 
         public override void MapearDeDatos()
@@ -38,7 +40,8 @@ namespace UI.Desktop
             this.txtID.Text = this.ComisionActual.ID.ToString();
             this.txtAnioEsp.Text = this.ComisionActual.AnioEspecialidad.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion;
-            this.txtIDPlan.Text = this.ComisionActual.IDPlan.ToString();
+            
+
 
             switch (this.Modo)
             {
@@ -66,7 +69,7 @@ namespace UI.Desktop
             {
                 this.ComisionActual.AnioEspecialidad = Int32.Parse(this.txtAnioEsp.Text);
                 this.ComisionActual.Descripcion = this.txtDescripcion.Text;
-                this.ComisionActual.IDPlan = Int32.Parse(this.txtIDPlan.Text);
+                this.ComisionActual.IDPlan = (int)this.cbPlanes.SelectedValue;
             }
 
             switch (this.Modo)
@@ -96,8 +99,7 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (this.txtDescripcion.Text.Length == 0 || this.txtIDPlan.Text.Length == 0
-                || this.txtAnioEsp.Text.Length == 0 )
+            if (this.txtDescripcion.Text.Length == 0 || this.txtAnioEsp.Text.Length == 0 )
             {
                 Notificar("Error", "Hay campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -118,6 +120,19 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ComisionDesktop_Load(object sender, EventArgs e)
+        {
+            PlanLogic pl = new PlanLogic();
+            this.cbPlanes.DataSource = pl.GetAll();
+            this.cbPlanes.DisplayMember = "Descripcion";
+            this.cbPlanes.ValueMember = "ID";
+            if(this.Modo != ModoForm.Alta)
+            {
+                this.cbPlanes.SelectedValue = this.ComisionActual.IDPlan;
+            }
+            
         }
     }
 }
