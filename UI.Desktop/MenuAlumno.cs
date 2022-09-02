@@ -33,7 +33,8 @@ namespace UI.Desktop
 
         private void btnInscribirse_Click(object sender, EventArgs e)
         {
-
+            InscripcionDesktop id = new InscripcionDesktop(sesion);
+            id.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
+using Util;
 
 namespace Data.Database
 {
@@ -407,6 +408,74 @@ namespace Data.Database
             }
 
             return per;
+        }
+
+
+        public List<ParDocenteCurso> GetDocentesByCurso(Curso curso)
+        {
+            List<ParDocenteCurso> docentesCursos = new List<ParDocenteCurso>();
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas p inner join docentes_cursos dc on p.id_persona = dc.id_docente where id_curso=@id_curso", sqlConn);
+                cmdPersonas.Parameters.Add("@id_curso", SqlDbType.Int).Value = curso.ID;
+                SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
+
+                while (drPersonas.Read())
+                {
+                    Persona per = new Persona();
+                    DocenteCurso dictado = new DocenteCurso();
+                    ParDocenteCurso parDocCur = new ParDocenteCurso();
+
+                    per.ID = (int)drPersonas["id_persona"];
+                    per.Nombre = (string)drPersonas["nombre"];
+                    per.Apellido = (string)drPersonas["apellido"];
+                    per.Direccion = (string)drPersonas["direccion"];
+                    per.Email = (string)drPersonas["email"];
+                    per.Telefono = (string)drPersonas["telefono"];
+                    per.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
+                    per.Legajo = (int)drPersonas["legajo"];
+                    per.IDPlan = (int)drPersonas["id_plan"];
+                    per.NombreUsuario = (string)drPersonas["nombre_usuario"];
+                    per.Clave = (string)drPersonas["clave"];
+                    per.Habilitado = (bool)drPersonas["habilitado"];
+                    if ((int)drPersonas["tipo_persona"] == 0)
+                        per.TipoPersona = Persona.TiposPersonas.Alumno;
+                    else
+                        per.TipoPersona = Persona.TiposPersonas.Docente;
+
+                    dictado.ID = (int)drPersonas["id_dictado"];
+                    dictado.IDDocente = (int)drPersonas["id_docente"];
+                    dictado.IDCurso = (int)drPersonas["id_curso"];
+                    if ((int)drPersonas["cargo"] == 0)
+                        dictado.Cargo = DocenteCurso.TiposCargos.Titular;
+                    else
+                        dictado.Cargo = DocenteCurso.TiposCargos.Ayudante;
+
+                    parDocCur.Docente = per;
+                    parDocCur.Dictado = dictado;
+
+                    docentesCursos.Add(parDocCur);
+                }
+
+                drPersonas.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+               new Exception("Error al recuperar lista de docentes", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return docentesCursos;
         }
     }
 }

@@ -112,6 +112,18 @@
     <Compile Include="CursoDesktop.Designer.cs">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="InscripcionConfirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscripcionConfirma.Designer.cs">
+      <DependentUpon>InscripcionConfirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscripcionDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscripcionDesktop.Designer.cs">
+      <DependentUpon>InscripcionDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +222,12 @@
     <EmbeddedResource Include="Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InscripcionConfirma.resx">
+      <DependentUpon>InscripcionConfirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscripcionDesktop.resx">
+      <DependentUpon>InscripcionDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +300,10 @@
     <ProjectReference Include="..\Business.Logic\Business.Logic.csproj">
       <Project>{42054b00-7375-4754-9ebc-2dbe9a2945b2}</Project>
       <Name>Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{ecf1e5e2-abfc-4ab7-baa8-be6ee338fa2d}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

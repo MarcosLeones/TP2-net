@@ -45,6 +45,7 @@
     <Compile Include="ComisionLogic.cs" />
     <Compile Include="CursoLogic.cs" />
     <Compile Include="EspecialidadLogic.cs" />
+    <Compile Include="InscripcionLogic.cs" />
     <Compile Include="LoginLogic.cs" />
     <Compile Include="MateriaLogic.cs" />
     <Compile Include="PersonaLogic.cs" />
@@ -60,6 +61,10 @@
     <ProjectReference Include="..\Data.Database\Data.Database\Data.Database.csproj">
       <Project>{18d1c50f-58e0-4d94-b05b-4a95a146e6bb}</Project>
       <Name>Data.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{ecf1e5e2-abfc-4ab7-baa8-be6ee338fa2d}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

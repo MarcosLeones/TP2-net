@@ -215,5 +215,55 @@ namespace Data.Database
             mt.State = BusinessEntity.States.Unmodified;
         }
 
+
+        public List<Materia> GetByPlanFiltraPorAlumno(int IDPlan, int IDAlumno)
+        {
+            //Devuelve las materias del plan que el alumno aun no tenga aprobadas
+
+            List<Materia> materias = new List<Materia>();
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdMaterias = new SqlCommand("select m.id_materia as id_materia, m.desc_materia as desc_materia, m.hs_semanales as hs_semanales, m.hs_totales as hs_totales, m.id_plan as id_plan"
+                    + "from materias m inner join cursos c on c.id_materia=m.id_materia"
+                    + "left join alumnos_inscripciones ai  on ai.id_curso=c.id_curso"
+                    + "where ai.id_alumno=@id_alumno and m.id_plan=@id_plan and ai.condicion <> 'aprobado'"
+                    , sqlConn);
+                cmdMaterias.Parameters.Add("@id_plan", SqlDbType.Int).Value = IDPlan;
+                cmdMaterias.Parameters.Add("@id_alumno", SqlDbType.Int).Value = IDAlumno;
+                SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
+
+                while (drMaterias.Read())
+                {
+                    Materia mt = new Materia();
+
+                    mt.ID = (int)drMaterias["id_materia"];
+                    mt.Descripcion = (string)drMaterias["desc_materia"];
+                    mt.HSSemanales = (int)drMaterias["hs_semanales"];
+                    mt.HSTotales = (int)drMaterias["hs_totales"];
+                    mt.IDPlan = (int)drMaterias["id_plan"];
+
+                    materias.Add(mt);
+                }
+
+                drMaterias.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+               new Exception("Error al recuperar lista de materias", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return materias;
+        }
     }
 }

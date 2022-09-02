@@ -196,5 +196,46 @@ namespace Data.Database
         }
 
 
+        public Curso GetByComisionMateriaAnio(int comision, int materia, int anio)
+        {
+            Curso curso = new Curso();
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos where id_comision=@comision and id_materia=@materia and anio_calendario=@anio", sqlConn);
+                cmdCursos.Parameters.Add("@comision", SqlDbType.Int).Value = comision;
+                cmdCursos.Parameters.Add("@materia", SqlDbType.Int).Value = materia;
+                cmdCursos.Parameters.Add("@anio", SqlDbType.Int).Value = anio;
+                SqlDataReader drCursos = cmdCursos.ExecuteReader();
+
+                if (drCursos.Read())
+                {
+                    curso.ID = (int)drCursos["id_curso"];
+                    curso.IDMateria = (int)drCursos["id_materia"];
+                    curso.IDComision = (int)drCursos["id_comision"];
+                    curso.AnioCalendario = (int)drCursos["anio_calendario"];
+                    curso.cupo = (int)drCursos["cupo"];
+                }
+
+                drCursos.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+               new Exception("Error al recuperar curso", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return curso;
+        }
+
     }
 }

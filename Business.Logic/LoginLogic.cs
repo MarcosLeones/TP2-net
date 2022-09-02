@@ -22,7 +22,7 @@ namespace Business.Logic
 
             if (persona != null)
             {
-                if (persona.Clave == clave)
+                if (persona.Clave == clave && persona.Habilitado)
                 {
                     return persona;
                 }

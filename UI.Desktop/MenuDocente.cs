@@ -26,20 +26,20 @@ namespace UI.Desktop
         {
            //Usuarios usuarios = new Usuarios();
            //usuarios.ShowDialog();
-           //Personas personas = new Personas();
-           //personas.ShowDialog();
-            Docentes docentes = new Docentes();
-            docentes.ShowDialog();
+           Personas personas = new Personas();
+           personas.ShowDialog();
+           //Docentes docentes = new Docentes();
+           //docentes.ShowDialog();
         }
 
         private void btnAlumnos_Click(object sender, EventArgs e)
         {
             //Usuarios usuarios = new Usuarios();
             //usuarios.ShowDialog();
-            //Personas personas = new Personas();
-            //personas.ShowDialog();
-            Alumnos alumnos = new Alumnos();
-            alumnos.ShowDialog();
+            Personas personas = new Personas();
+            personas.ShowDialog();
+            //Alumnos alumnos = new Alumnos();
+            //alumnos.ShowDialog();
         }
 
         private void btnEspecialidades_Click(object sender, EventArgs e)
