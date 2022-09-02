@@ -58,7 +58,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdInscripciones = new SqlCommand("select * from alumnos_inscripciones where id_curso=@id_curso and id_alumno=@id_alumno", sqlConn);
+                SqlCommand cmdInscripciones = new SqlCommand("select id_inscripcion, id_curso, id_alumno, condicion, ISNULL(nota,0) as nota from alumnos_inscripciones where id_curso=@id_curso and id_alumno=@id_alumno", sqlConn);
                 cmdInscripciones.Parameters.Add("@id_curso", SqlDbType.Int).Value = curso;
                 cmdInscripciones.Parameters.Add("@id_alumno", SqlDbType.Int).Value = alumno;
                 SqlDataReader drInscripciones = cmdInscripciones.ExecuteReader();
@@ -97,7 +97,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones (id_alumno, id_curso) VALUES (@id_alumno, @id_curso) select @@identity", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones (id_alumno, id_curso, condicion) VALUES (@id_alumno, @id_curso, 'cursando') select @@identity", sqlConn);
 
                 cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = inscripcion.IDAlumno;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = inscripcion.IDCurso;

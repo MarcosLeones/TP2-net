@@ -36,7 +36,7 @@ namespace UI.Desktop
                 }
                 else
                 {
-                    MenuDocente md = new MenuDocente();
+                    MenuDocente md = new MenuDocente(p);
                     md.ShowDialog();
                 }
             }

@@ -82,6 +82,18 @@
     <Compile Include="Cursos.Designer.cs">
       <DependentUpon>Cursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DictadoConfirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictadoConfirma.Designer.cs">
+      <DependentUpon>DictadoConfirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictadoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictadoDesktop.Designer.cs">
+      <DependentUpon>DictadoDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DocenteDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +222,12 @@
     <EmbeddedResource Include="CursoDesktop.resx">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DictadoConfirma.resx">
+      <DependentUpon>DictadoConfirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictadoDesktop.resx">
+      <DependentUpon>DictadoDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DocenteDesktop.resx">
       <DependentUpon>DocenteDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +291,7 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\DataSources\Business.Entities.Comision.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.DocenteCurso.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Especialidad.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Materia.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Persona.datasource" />

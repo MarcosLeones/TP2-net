@@ -16,7 +16,7 @@ namespace UI.Desktop
     {
         public Persona Sesion { get; set; }
 
-        public AlumnoInscripcion Inscripcion { get; set; }
+        public Plan PlanActual { get; set; }
 
         public int IDComision { get; set; }
 
@@ -31,20 +31,27 @@ namespace UI.Desktop
         {
             InitializeComponent();
             Sesion = sesion;
-            Inscripcion = new AlumnoInscripcion();
-            Inscripcion.IDAlumno = sesion.ID;
+            PlanLogic pl = new PlanLogic();
+            PlanActual = pl.GetOne(Sesion.IDPlan);
+               
         }
 
         private void InscripcionDesktop_Load(object sender, EventArgs e)
         {
-            this.txtPlan.Text = Sesion.IDPlan.ToString();
+            this.txtPlan.Text = PlanActual.Descripcion;
 
             InscripcionLogic il = new InscripcionLogic();
             this.cbComision.DataSource = il.GetComisionesByPlan(Sesion.IDPlan);
             this.cbComision.DisplayMember = "Descripcion";
             this.cbComision.ValueMember = "ID";
 
-           
+            //Esto es temporal porque no funciona el DataSource del ComboBox
+                MateriaLogic ml = new MateriaLogic();
+                this.cbMateria.DataSource = ml.GetAll();
+                this.cbMateria.DisplayMember = "Descripcion";
+                this.cbMateria.ValueMember = "ID";
+                this.cbMateria.Refresh();
+            //Fin temporal
         }
 
         private void btnComision_Click(object sender, EventArgs e)
@@ -52,15 +59,15 @@ namespace UI.Desktop
             this.IDComision = (int)cbComision.SelectedValue;
 
             InscripcionLogic il = new InscripcionLogic();
-            this.cbMateria.DataSource = il.GetMateriasByPlanFiltraPorAlumno(Sesion.IDPlan, Sesion.ID);
+            //this.cbMateria.DataSource = il.GetMateriasByPlanFiltraPorAlumno(Sesion.IDPlan, Sesion.ID);
             this.cbMateria.DisplayMember = "Descripcion";
             this.cbMateria.ValueMember = "ID";
-
+            this.cbMateria.Refresh();
+            
             cbComision.Enabled = false;
             btnComision.Enabled = false;
             cbMateria.Enabled = true;
-
-
+            btnSiguiente.Enabled = true;
 
         }
 
@@ -68,7 +75,7 @@ namespace UI.Desktop
         {
             this.IDMateria = (int)cbMateria.SelectedValue;
 
-            InscripcionConfirma inscripcionConfirma = new InscripcionConfirma(this.Sesion, this.IDComision, this.IDMateria);
+            InscripcionConfirma inscripcionConfirma = new InscripcionConfirma(this.Sesion, this.PlanActual, this.IDComision, this.IDMateria);
             inscripcionConfirma.ShowDialog();
 
             

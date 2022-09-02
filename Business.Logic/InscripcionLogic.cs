@@ -31,7 +31,7 @@ namespace Business.Logic
 
             AlumnoInscripcion existeInscripcion = InscripcionData.GetInscripcionDePersona(inscripcion.IDCurso, inscripcion.IDAlumno);
 
-            if (existeInscripcion.ID == 0)
+            if (existeInscripcion.ID != 0)
             {
                 Exception ExcepcionManejada =
                   new Exception("El alumno ya se encuentra inscripto en el curso.");
@@ -47,8 +47,19 @@ namespace Business.Logic
 
                 if (inscripcionesActuales < cupo)
                 {
-                    InscripcionData.Save(inscripcion);
+                    try
+                    {
+                        InscripcionData.Save(inscripcion);
+                    }
+                    catch (Exception ex)
+                    {
+                        Exception ExcepcionManejada =
+                    new Exception("Hubo un error al intentar registrar la inscripción.");
+                        throw ExcepcionManejada;
+                    }
+                  
                     return "El alumno se inscribió correctamente al curso.";
+
                 }
                 else
                 {
@@ -67,7 +78,7 @@ namespace Business.Logic
             DateTime myDateTime = DateTime.Now;
             int year = myDateTime.Year;
             Curso curso = cursoData.GetByComisionMateriaAnio(comision, materia, year);
-            if (curso != null)
+            if (curso.ID != 0)
             {
                 return curso;
             }
@@ -105,5 +116,44 @@ namespace Business.Logic
             PersonaAdapter personaData = new PersonaAdapter();
             return personaData.GetDocentesByCurso(curso);
         }
+
+
+        public void InscribirDocente(DocenteCurso dictado)
+        {
+            DocenteCursoAdapter docenteCursoData = new DocenteCursoAdapter();
+
+            List<DocenteCurso> dictadosActuales = docenteCursoData.GetByCurso(dictado.IDCurso);
+
+            foreach (DocenteCurso d in dictadosActuales)
+            {
+                if (d.IDDocente == dictado.IDDocente)
+                {
+                    Exception ExcepcionManejada =
+                  new Exception("Ya se encuentra anotado como docente del curso.");
+                    throw ExcepcionManejada;
+                }
+                if (d.Cargo == DocenteCurso.TiposCargos.Titular && dictado.Cargo == DocenteCurso.TiposCargos.Titular)
+                {
+                    Exception ExcepcionManejada =
+                  new Exception("El curso ya tiene un docente titular.");
+                    throw ExcepcionManejada;
+                }
+            }
+
+            try
+            {
+                dictado.State = BusinessEntity.States.New;
+                docenteCursoData.Save(dictado);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                  new Exception(ex.Message);
+                throw ExcepcionManejada;
+            }
+        }
+
+
+
     }
 }

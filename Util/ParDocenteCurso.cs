@@ -9,6 +9,7 @@ namespace Util
 {
     public class ParDocenteCurso
     {
+
         private Persona _Docente;
         public DocenteCurso _Dictado;
 

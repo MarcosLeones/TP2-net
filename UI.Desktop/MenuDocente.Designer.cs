@@ -38,11 +38,13 @@
             this.btnMaterias = new System.Windows.Forms.Button();
             this.btnComisiones = new System.Windows.Forms.Button();
             this.btnCursos = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnNotas = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnRepoCursos = new System.Windows.Forms.Button();
             this.btnRepoPlanes = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnRegistrarse = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,9 +78,11 @@
             this.tableLayoutPanel1.Controls.Add(this.btnCursos, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNotas, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnRepoCursos, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnRepoPlanes, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btnRepoPlanes, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.btnRepoCursos, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnRegistrarse, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 3, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -182,36 +186,6 @@
             this.btnCursos.UseVisualStyleBackColor = true;
             this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
-            // btnNotas
-            // 
-            this.btnNotas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNotas.Location = new System.Drawing.Point(483, 78);
-            this.btnNotas.Name = "btnNotas";
-            this.btnNotas.Size = new System.Drawing.Size(234, 23);
-            this.btnNotas.TabIndex = 10;
-            this.btnNotas.Text = "Notas";
-            this.btnNotas.UseVisualStyleBackColor = true;
-            // 
-            // btnRepoCursos
-            // 
-            this.btnRepoCursos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRepoCursos.Location = new System.Drawing.Point(483, 258);
-            this.btnRepoCursos.Name = "btnRepoCursos";
-            this.btnRepoCursos.Size = new System.Drawing.Size(234, 23);
-            this.btnRepoCursos.TabIndex = 11;
-            this.btnRepoCursos.Text = "Reporte de Cursos";
-            this.btnRepoCursos.UseVisualStyleBackColor = true;
-            // 
-            // btnRepoPlanes
-            // 
-            this.btnRepoPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRepoPlanes.Location = new System.Drawing.Point(483, 303);
-            this.btnRepoPlanes.Name = "btnRepoPlanes";
-            this.btnRepoPlanes.Size = new System.Drawing.Size(234, 23);
-            this.btnRepoPlanes.TabIndex = 12;
-            this.btnRepoPlanes.Text = "Reporte de Planes";
-            this.btnRepoPlanes.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -222,15 +196,66 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Registro de notas:";
             // 
+            // btnNotas
+            // 
+            this.btnNotas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotas.Location = new System.Drawing.Point(483, 78);
+            this.btnNotas.Name = "btnNotas";
+            this.btnNotas.Size = new System.Drawing.Size(234, 23);
+            this.btnNotas.TabIndex = 10;
+            this.btnNotas.Text = "Notas";
+            this.btnNotas.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(567, 231);
+            this.label3.Location = new System.Drawing.Point(567, 276);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 16);
             this.label3.TabIndex = 14;
             this.label3.Text = "Reportes:";
+            // 
+            // btnRepoCursos
+            // 
+            this.btnRepoCursos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRepoCursos.Location = new System.Drawing.Point(483, 303);
+            this.btnRepoCursos.Name = "btnRepoCursos";
+            this.btnRepoCursos.Size = new System.Drawing.Size(234, 23);
+            this.btnRepoCursos.TabIndex = 11;
+            this.btnRepoCursos.Text = "Reporte de Cursos";
+            this.btnRepoCursos.UseVisualStyleBackColor = true;
+            // 
+            // btnRepoPlanes
+            // 
+            this.btnRepoPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRepoPlanes.Location = new System.Drawing.Point(483, 348);
+            this.btnRepoPlanes.Name = "btnRepoPlanes";
+            this.btnRepoPlanes.Size = new System.Drawing.Size(234, 23);
+            this.btnRepoPlanes.TabIndex = 12;
+            this.btnRepoPlanes.Text = "Reporte de Planes";
+            this.btnRepoPlanes.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(532, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Registro de dictados:";
+            // 
+            // btnRegistrarse
+            // 
+            this.btnRegistrarse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrarse.Location = new System.Drawing.Point(483, 168);
+            this.btnRegistrarse.Name = "btnRegistrarse";
+            this.btnRegistrarse.Size = new System.Drawing.Size(234, 23);
+            this.btnRegistrarse.TabIndex = 16;
+            this.btnRegistrarse.Text = "Registrarse";
+            this.btnRegistrarse.UseVisualStyleBackColor = true;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // MenuDocente
             // 
@@ -263,5 +288,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRepoCursos;
         private System.Windows.Forms.Button btnRepoPlanes;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnRegistrarse;
     }
 }
