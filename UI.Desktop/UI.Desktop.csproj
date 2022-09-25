@@ -82,6 +82,18 @@
     <Compile Include="Cursos.Designer.cs">
       <DependentUpon>Cursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DictadoConfirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictadoConfirma.Designer.cs">
+      <DependentUpon>DictadoConfirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictadoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictadoDesktop.Designer.cs">
+      <DependentUpon>DictadoDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DocenteDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,18 @@
     </Compile>
     <Compile Include="CursoDesktop.Designer.cs">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscripcionConfirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscripcionConfirma.Designer.cs">
+      <DependentUpon>InscripcionConfirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscripcionDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscripcionDesktop.Designer.cs">
+      <DependentUpon>InscripcionDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -198,6 +222,12 @@
     <EmbeddedResource Include="CursoDesktop.resx">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DictadoConfirma.resx">
+      <DependentUpon>DictadoConfirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictadoDesktop.resx">
+      <DependentUpon>DictadoDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DocenteDesktop.resx">
       <DependentUpon>DocenteDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscripcionConfirma.resx">
+      <DependentUpon>InscripcionConfirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscripcionDesktop.resx">
+      <DependentUpon>InscripcionDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -255,6 +291,7 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\DataSources\Business.Entities.Comision.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.DocenteCurso.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Especialidad.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Materia.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Persona.datasource" />
@@ -282,6 +319,10 @@
     <ProjectReference Include="..\Business.Logic\Business.Logic.csproj">
       <Project>{42054b00-7375-4754-9ebc-2dbe9a2945b2}</Project>
       <Name>Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{ecf1e5e2-abfc-4ab7-baa8-be6ee338fa2d}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

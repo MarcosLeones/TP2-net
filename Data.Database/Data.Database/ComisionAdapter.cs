@@ -192,5 +192,48 @@ namespace Data.Database
         }
 
 
+
+        public List<Comision> GetByPlan(int IDPlan)
+        {
+            List<Comision> comisiones = new List<Comision>();
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdComisiones = new SqlCommand("select * from comisiones where id_plan=@id_plan", sqlConn);
+                cmdComisiones.Parameters.Add("@id_plan", SqlDbType.Int).Value = IDPlan;
+                SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
+
+                while (drComisiones.Read())
+                {
+                    Comision comi = new Comision();
+
+                    comi.ID = (int)drComisiones["id_comision"];
+                    comi.Descripcion = (string)drComisiones["desc_comision"];
+                    comi.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
+                    comi.IDPlan = (int)drComisiones["id_plan"];
+
+
+                    comisiones.Add(comi);
+                }
+
+                drComisiones.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+               new Exception("Error al recuperar lista de comisiones", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return comisiones;
+        }
     }
 }
