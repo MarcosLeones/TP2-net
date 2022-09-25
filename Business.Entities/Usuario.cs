@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class Usuario : Personas
+    public class Usuario : Persona
     {
         private string _NombreUsuario;
         public string NombreUsuario

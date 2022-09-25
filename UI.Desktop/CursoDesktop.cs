@@ -35,8 +35,6 @@ namespace UI.Desktop
         public override void MapearDeDatos() {
 
             this.txtIDcurso.Text = this.CursoActual.ID.ToString();
-            this.txtComision.Text = this.CursoActual.IDComision.ToString();
-            this.txtMateria.Text = this.CursoActual.IDMateria.ToString();
             this.txtAnioCalendario.Text = this.CursoActual.AnioCalendario.ToString();
             this.txtCupo.Text = this.CursoActual.cupo.ToString();
 
@@ -63,10 +61,11 @@ namespace UI.Desktop
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
-                this.CursoActual.IDComision = int.Parse(this.txtComision.Text);
-                this.CursoActual.IDMateria = int.Parse(this.txtMateria.Text);
+
                 this.CursoActual.AnioCalendario = int.Parse(this.txtAnioCalendario.Text);
                 this.CursoActual.cupo = int.Parse(this.txtCupo.Text);
+                this.CursoActual.IDComision = (int)this.cbComisiones.SelectedValue;
+                this.CursoActual.IDMateria = (int)this.cbMaterias.SelectedValue;
             }
 
             switch (this.Modo)
@@ -94,7 +93,7 @@ namespace UI.Desktop
         }
         public override bool Validar() {
 
-            if (this.txtCupo.Text.Length == 0 || this.txtAnioCalendario.Text.Length == 0 || this.txtComision.Text.Length == 0 || this.txtMateria.Text.Length == 0 )
+            if (this.txtCupo.Text.Length == 0 || this.txtAnioCalendario.Text.Length == 0 )
             {
                 Notificar("Error", "Hay campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -102,7 +101,7 @@ namespace UI.Desktop
 
             var regEx = new Regex("^[0-9]+$");
 
-            if (!regEx.IsMatch(this.txtCupo.Text) || !regEx.IsMatch(this.txtMateria.Text) || !regEx.IsMatch(this.txtAnioCalendario.Text) || !regEx.IsMatch(this.txtComision.Text))
+            if (!regEx.IsMatch(this.txtCupo.Text) ||  !regEx.IsMatch(this.txtAnioCalendario.Text))
             {
                 Notificar("Error", "El o los elementos deben ser un numero", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -125,6 +124,27 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CursoDesktop_Load(object sender, EventArgs e)
+        {
+            ComisionLogic cl = new ComisionLogic();
+            this.cbComisiones.DataSource = cl.GetAll();
+            this.cbComisiones.DisplayMember = "Descripcion";
+            this.cbComisiones.ValueMember = "ID";
+            if (this.Modo != ModoForm.Alta)
+            {
+                this.cbComisiones.SelectedValue = this.CursoActual.IDComision;
+            }
+
+            MateriaLogic ml = new MateriaLogic();
+            this.cbMaterias.DataSource = ml.GetAll();
+            this.cbMaterias.DisplayMember = "Descripcion";
+            this.cbMaterias.ValueMember = "ID";
+            if (this.Modo != ModoForm.Alta)
+            {
+                this.cbMaterias.SelectedValue = this.CursoActual.IDMateria;
+            }
         }
     }
 }

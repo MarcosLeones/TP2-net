@@ -10,34 +10,37 @@ using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
 
+
+
 namespace UI.Desktop
 {
-    public partial class MateriaDesktop : ApplicationForm
+    public partial class ComisionDesktop : ApplicationForm
     {
 
-        public Materia MateriaActual { get; set; }
+        public Comision ComisionActual { get; set; }
 
-        public MateriaDesktop()
+        public ComisionDesktop()
         {
             InitializeComponent();
         }
 
-        public MateriaDesktop(ModoForm modo) : this() { Modo = modo; }
+        public ComisionDesktop(ModoForm modo) : this() { Modo = modo; }
 
-        public MateriaDesktop(int ID, ModoForm modo) : this()
+        public ComisionDesktop(int ID, ModoForm modo) : this()
         {
             Modo = modo;
-            MateriaLogic ml = new MateriaLogic();
-            MateriaActual = ml.GetOne(ID);
-            MapearDeDatos();
+            ComisionLogic cl = new ComisionLogic();
+            ComisionActual = cl.GetOne(ID);
+            MapearDeDatos();           
+            
         }
 
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.MateriaActual.ID.ToString();
-            this.txtDescripcion.Text = this.MateriaActual.Descripcion;
-            this.txtHSSemanales.Text = this.MateriaActual.HSSemanales.ToString();
-            this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
+            this.txtID.Text = this.ComisionActual.ID.ToString();
+            this.txtAnioEsp.Text = this.ComisionActual.AnioEspecialidad.ToString();
+            this.txtDescripcion.Text = this.ComisionActual.Descripcion;
+            
 
 
             switch (this.Modo)
@@ -58,31 +61,30 @@ namespace UI.Desktop
         {
             if (this.Modo == ModoForm.Alta)
             {
-                this.MateriaActual = new Materia();
+                this.ComisionActual = new Comision();
             }
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
-                this.MateriaActual.Descripcion = this.txtDescripcion.Text;
-                this.MateriaActual.HSSemanales = Int32.Parse(this.txtHSSemanales.Text);
-                this.MateriaActual.HSTotales = Int32.Parse(this.txtHSTotales.Text);
-                this.MateriaActual.IDPlan = (int)this.cbPlanes.SelectedValue;
+                this.ComisionActual.AnioEspecialidad = Int32.Parse(this.txtAnioEsp.Text);
+                this.ComisionActual.Descripcion = this.txtDescripcion.Text;
+                this.ComisionActual.IDPlan = (int)this.cbPlanes.SelectedValue;
             }
 
             switch (this.Modo)
             {
                 case ModoForm.Alta:
-                    MateriaActual.State = BusinessEntity.States.New;
+                    ComisionActual.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Modificacion:
-                    MateriaActual.State = BusinessEntity.States.Modified;
+                    ComisionActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
-                    MateriaActual.State = BusinessEntity.States.Deleted;
+                    ComisionActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
-                    MateriaActual.State = BusinessEntity.States.Unmodified;
+                    ComisionActual.State = BusinessEntity.States.Unmodified;
                     break;
             }
 
@@ -91,29 +93,20 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-            MateriaLogic ml = new MateriaLogic();
-            ml.Save(MateriaActual);
+            ComisionLogic cl = new ComisionLogic();
+            cl.Save(ComisionActual);
         }
-
 
         public override bool Validar()
         {
-            if (this.txtDescripcion.Text.Length == 0 
-                || this.txtHSSemanales.Text.Length == 0 || this.txtHSTotales.Text.Length == 0)
+            if (this.txtDescripcion.Text.Length == 0 || this.txtAnioEsp.Text.Length == 0 )
             {
                 Notificar("Error", "Hay campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (Int32.Parse(this.txtHSSemanales.Text) > Int32.Parse(this.txtHSTotales.Text))
-            {
-                Notificar("Error", "Las horas semanales no pueden ser mayores a las totales", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
             return true;
         }
-
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -129,16 +122,17 @@ namespace UI.Desktop
             Close();
         }
 
-        private void MateriaDesktop_Load(object sender, EventArgs e)
+        private void ComisionDesktop_Load(object sender, EventArgs e)
         {
             PlanLogic pl = new PlanLogic();
             this.cbPlanes.DataSource = pl.GetAll();
             this.cbPlanes.DisplayMember = "Descripcion";
             this.cbPlanes.ValueMember = "ID";
-            if (this.Modo != ModoForm.Alta)
+            if(this.Modo != ModoForm.Alta)
             {
-                this.cbPlanes.SelectedValue = this.MateriaActual.IDPlan;
+                this.cbPlanes.SelectedValue = this.ComisionActual.IDPlan;
             }
+            
         }
     }
 }

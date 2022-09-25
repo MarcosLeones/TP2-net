@@ -35,8 +35,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
-            this.txtDescripcion.Text = this.PlanActual.Descripcion;
-            this.txtIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+            this.txtDescripcion.Text = this.PlanActual.Descripcion;      
 
             switch (this.Modo)
             {
@@ -63,7 +62,7 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
                 this.PlanActual.Descripcion = this.txtDescripcion.Text;
-                this.PlanActual.IDEspecialidad = Int32.Parse(this.txtIDEspecialidad.Text);
+                this.PlanActual.IDEspecialidad = (int)this.cbEspecialidades.SelectedValue;
             }
 
             switch (this.Modo)
@@ -94,7 +93,7 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (this.txtDescripcion.Text.Length == 0 || this.txtIDEspecialidad.Text.Length == 0)
+            if (this.txtDescripcion.Text.Length == 0)
             {
                 Notificar("Error", "Hay campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -116,6 +115,18 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void PlanDesktop_Load(object sender, EventArgs e)
+        {
+            EspecialidadLogic el = new EspecialidadLogic();
+            this.cbEspecialidades.DataSource = el.GetAll();
+            this.cbEspecialidades.DisplayMember = "Descripcion";
+            this.cbEspecialidades.ValueMember = "ID";
+            if (this.Modo != ModoForm.Alta)
+            {
+                this.cbEspecialidades.SelectedValue = this.PlanActual.IDEspecialidad;
+            }
         }
     }
 }
