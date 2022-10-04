@@ -29,16 +29,27 @@ namespace UI.Desktop
             Persona p = login.validarIngreso(usuario, clave);
             if (p != null)
             {
-                if (p.TipoPersona == Persona.TiposPersonas.Alumno)
+                try
                 {
-                    MenuAlumno ma = new MenuAlumno(p);
-                    ma.ShowDialog();
+                    if (p.TipoPersona == Persona.TiposPersonas.Alumno)
+                    {
+                        MenuAlumno ma = new MenuAlumno(p);
+                        this.Hide();
+                        ma.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MenuDocente md = new MenuDocente(p);
+                        this.Hide();
+                        md.ShowDialog();
+                    }
                 }
-                else
+                finally 
                 {
-                    MenuDocente md = new MenuDocente(p);
-                    md.ShowDialog();
+                    this.Close();
                 }
+
             }
             else
             {

@@ -33,8 +33,9 @@ namespace UI.Desktop
         {
            //Usuarios usuarios = new Usuarios();
            //usuarios.ShowDialog();
-           Personas personas = new Personas();
+           Personas personas = new Personas(Sesion, true);
            personas.ShowDialog();
+
            //Docentes docentes = new Docentes();
            //docentes.ShowDialog();
         }
@@ -43,7 +44,7 @@ namespace UI.Desktop
         {
             //Usuarios usuarios = new Usuarios();
             //usuarios.ShowDialog();
-            Personas personas = new Personas();
+            Personas personas = new Personas(Sesion, false);
             personas.ShowDialog();
             //Alumnos alumnos = new Alumnos();
             //alumnos.ShowDialog();
