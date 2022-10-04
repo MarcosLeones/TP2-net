@@ -85,5 +85,13 @@ namespace UI.Desktop
             DictadoDesktop dictadoDesktop = new DictadoDesktop(Sesion);
             dictadoDesktop.ShowDialog();
         }
+
+        private void btnRepoPlanes_Click(object sender, EventArgs e)
+        {
+            ReportesPlanesDesktop repPlanes = new ReportesPlanesDesktop();
+            this.Hide();
+            repPlanes.ShowDialog();
+            this.Show();
+        }
     }
 }

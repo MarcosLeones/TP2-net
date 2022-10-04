@@ -56,6 +56,16 @@ namespace UI.Desktop
                 MessageBox.Show("Usuario y clave incorrectos.","Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            
+        }
+
+        private void EnterKeyPressed(object sender, KeyPressEventArgs keyEventArgs)
+        {
+            if (keyEventArgs.KeyChar == (char)Keys.Enter) 
+            {
+                this.button1_Click(sender, keyEventArgs);
+            }
+            
         }
     }
 }
