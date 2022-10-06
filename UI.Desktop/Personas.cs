@@ -9,14 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Desktop
 {
     public partial class Personas : Form
     {
+        private Persona Sesion;
+        private bool isDocenteBtnClicked;
+
         public Personas()
         {
             InitializeComponent();
+        }
+
+        public Personas(Persona Sesion, bool isDocenteBtnClicked)
+        {
+            InitializeComponent();
+            this.Sesion = Sesion;
+            this.isDocenteBtnClicked = isDocenteBtnClicked;
         }
 
         private void Personas_Load(object sender, EventArgs e)
@@ -27,7 +38,10 @@ namespace UI.Desktop
         public void Listar()
         {
             PersonaLogic pl = new PersonaLogic();
-            this.dgvPersonas.DataSource = pl.GetAll();
+            var listadoSinFiltrar = pl.GetAll();
+            this.dgvPersonas.DataSource = this.isDocenteBtnClicked ? listadoSinFiltrar.Where(lsf => lsf.TipoPersona == Persona.TiposPersonas.Docente).ToList() 
+                                          : listadoSinFiltrar.Where(lsf => lsf.TipoPersona == Persona.TiposPersonas.Alumno).ToList();
+
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
