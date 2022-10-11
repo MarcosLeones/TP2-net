@@ -93,5 +93,11 @@ namespace UI.Desktop
             repPlanes.ShowDialog();
             this.Show();
         }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            RegistroNotasDesktop regNotas = new RegistroNotasDesktop(Sesion);
+            regNotas.ShowDialog();
+        }
     }
 }
