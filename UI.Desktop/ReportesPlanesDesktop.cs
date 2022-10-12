@@ -65,5 +65,10 @@ namespace UI.Desktop
         {
             Listardgv();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
