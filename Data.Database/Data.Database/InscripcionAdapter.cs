@@ -279,6 +279,53 @@ namespace Data.Database
             return cursos;
         }
 
+
+
+        public List<CursoNota> GetAllNotasDePersona(Persona alumno)
+        {
+
+            List<CursoNota> inscripciones = new List<CursoNota>();
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdInscripciones = new SqlCommand("select desc_materia, descripcion, isnull(nota, 0) as nota, condicion " +
+                    " from alumnos_inscripciones ai " +
+                    " inner join cursos c on ai.id_curso = c.id_curso " +
+                    " inner join materias m on c.id_materia = m.id_materia " +
+                    " where id_alumno=@id_alumno", sqlConn);
+                cmdInscripciones.Parameters.Add("@id_alumno", SqlDbType.Int).Value = alumno.ID;
+                SqlDataReader drInscripciones = cmdInscripciones.ExecuteReader();
+
+                while (drInscripciones.Read())
+                {
+                    CursoNota inscripcion = new CursoNota();
+                    inscripcion.Materia = (string)drInscripciones["desc_materia"];
+                    inscripcion.Curso = (string)drInscripciones["descripcion"];
+                    inscripcion.Nota = (int)drInscripciones["nota"];
+                    inscripcion.Condicion = (string)drInscripciones["condicion"];
+                    inscripciones.Add(inscripcion);
+                }
+
+                drInscripciones.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+               new Exception("Error al recuperar inscripciones", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return inscripciones;
+        }
+
     }
 
 }
