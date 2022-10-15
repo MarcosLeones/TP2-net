@@ -154,6 +154,10 @@ namespace Business.Logic
         }
 
 
+        public List<CursoNota> GetNotas(Persona alumno)
+        {
+            return InscripcionData.GetAllNotasDePersona(alumno);
+        }
 
     }
 }

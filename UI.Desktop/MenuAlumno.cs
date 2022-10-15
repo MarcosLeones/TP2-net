@@ -41,5 +41,11 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            ListadoNotasDesktop lnd = new ListadoNotasDesktop(sesion);
+            lnd.ShowDialog();
+        }
     }
 }
