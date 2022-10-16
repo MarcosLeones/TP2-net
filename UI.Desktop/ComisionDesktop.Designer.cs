@@ -180,7 +180,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ComisionDesktop";
-            this.Text = "ComisionDesktop";
+            this.Text = "Formulario Comisión";
             this.Load += new System.EventHandler(this.ComisionDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

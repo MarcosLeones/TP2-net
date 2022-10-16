@@ -41,7 +41,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -52,11 +51,12 @@
             this.txtRepetirClave = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.cbPlanes = new System.Windows.Forms.ComboBox();
             this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbPlanes = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -230,16 +230,6 @@
             this.label14.TabIndex = 13;
             this.label14.Text = "Fecha de Nacimiento";
             // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(119, 244);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 16);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Plan";
-            // 
             // txtID
             // 
             this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -324,15 +314,6 @@
             this.txtTelefono.Size = new System.Drawing.Size(228, 22);
             this.txtTelefono.TabIndex = 25;
             // 
-            // cbPlanes
-            // 
-            this.cbPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbPlanes.FormattingEnabled = true;
-            this.cbPlanes.Location = new System.Drawing.Point(159, 240);
-            this.cbPlanes.Name = "cbPlanes";
-            this.cbPlanes.Size = new System.Drawing.Size(228, 24);
-            this.cbPlanes.TabIndex = 27;
-            // 
             // chkHabilitado
             // 
             this.chkHabilitado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -374,6 +355,25 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(119, 244);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 16);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Plan";
+            // 
+            // cbPlanes
+            // 
+            this.cbPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbPlanes.FormattingEnabled = true;
+            this.cbPlanes.Location = new System.Drawing.Point(159, 240);
+            this.cbPlanes.Name = "cbPlanes";
+            this.cbPlanes.Size = new System.Drawing.Size(228, 24);
+            this.cbPlanes.TabIndex = 27;
+            // 
             // AlumnoDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,7 +381,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AlumnoDesktop";
-            this.Text = "AlumnoDesktop";
+            this.Text = "Formulario Alumno";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

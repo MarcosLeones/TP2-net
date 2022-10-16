@@ -300,6 +300,12 @@
     <EmbeddedResource Include="Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistroNotasDesktop.resx">
+      <DependentUpon>RegistroNotasDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesCursos.resx">
+      <DependentUpon>ReportesCursos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesPlanesDesktop.resx">
       <DependentUpon>ReportesPlanesDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,10 +323,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\DataSources\Business.Entities.Comision.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.Curso.datasource" />
     <None Include="Properties\DataSources\Business.Entities.DocenteCurso.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Especialidad.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Materia.datasource" />
@@ -355,6 +363,16 @@
       <Project>{ecf1e5e2-abfc-4ab7-baa8-be6ee338fa2d}</Project>
       <Name>Util</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

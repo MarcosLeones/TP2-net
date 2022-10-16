@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtPlan = new System.Windows.Forms.TextBox();
-            this.txtComision = new System.Windows.Forms.TextBox();
-            this.txtMateria = new System.Windows.Forms.TextBox();
-            this.txtCurso = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvDocentes = new System.Windows.Forms.DataGridView();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtPlan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtComision = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtMateria = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtCurso = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbCargo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -83,53 +83,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // txtPlan
-            // 
-            this.txtPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPlan.Location = new System.Drawing.Point(163, 21);
-            this.txtPlan.Name = "txtPlan";
-            this.txtPlan.ReadOnly = true;
-            this.txtPlan.Size = new System.Drawing.Size(154, 22);
-            this.txtPlan.TabIndex = 0;
-            // 
-            // txtComision
-            // 
-            this.txtComision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComision.Location = new System.Drawing.Point(483, 21);
-            this.txtComision.Name = "txtComision";
-            this.txtComision.ReadOnly = true;
-            this.txtComision.Size = new System.Drawing.Size(154, 22);
-            this.txtComision.TabIndex = 1;
-            // 
-            // txtMateria
-            // 
-            this.txtMateria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMateria.Location = new System.Drawing.Point(163, 85);
-            this.txtMateria.Name = "txtMateria";
-            this.txtMateria.ReadOnly = true;
-            this.txtMateria.Size = new System.Drawing.Size(154, 22);
-            this.txtMateria.TabIndex = 2;
-            // 
-            // txtCurso
-            // 
-            this.txtCurso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCurso.Location = new System.Drawing.Point(483, 85);
-            this.txtCurso.Name = "txtCurso";
-            this.txtCurso.ReadOnly = true;
-            this.txtCurso.Size = new System.Drawing.Size(154, 22);
-            this.txtCurso.TabIndex = 3;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.Location = new System.Drawing.Point(3, 420);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(88, 27);
-            this.btnCancelar.TabIndex = 6;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // dgvDocentes
             // 
             this.dgvDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -146,13 +99,24 @@
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(707, 420);
+            this.btnAceptar.Location = new System.Drawing.Point(698, 416);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(90, 27);
+            this.btnAceptar.Size = new System.Drawing.Size(99, 31);
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancelar.Location = new System.Drawing.Point(3, 416);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(97, 31);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label1
             // 
@@ -164,6 +128,15 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Plan:";
             // 
+            // txtPlan
+            // 
+            this.txtPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPlan.Location = new System.Drawing.Point(163, 21);
+            this.txtPlan.Name = "txtPlan";
+            this.txtPlan.ReadOnly = true;
+            this.txtPlan.Size = new System.Drawing.Size(154, 22);
+            this.txtPlan.TabIndex = 0;
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -173,6 +146,15 @@
             this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Comision:";
+            // 
+            // txtComision
+            // 
+            this.txtComision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtComision.Location = new System.Drawing.Point(483, 21);
+            this.txtComision.Name = "txtComision";
+            this.txtComision.ReadOnly = true;
+            this.txtComision.Size = new System.Drawing.Size(154, 22);
+            this.txtComision.TabIndex = 1;
             // 
             // label3
             // 
@@ -184,6 +166,15 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Materia:";
             // 
+            // txtMateria
+            // 
+            this.txtMateria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMateria.Location = new System.Drawing.Point(163, 85);
+            this.txtMateria.Name = "txtMateria";
+            this.txtMateria.ReadOnly = true;
+            this.txtMateria.Size = new System.Drawing.Size(154, 22);
+            this.txtMateria.TabIndex = 2;
+            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -193,6 +184,15 @@
             this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Curso:";
+            // 
+            // txtCurso
+            // 
+            this.txtCurso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCurso.Location = new System.Drawing.Point(483, 85);
+            this.txtCurso.Name = "txtCurso";
+            this.txtCurso.ReadOnly = true;
+            this.txtCurso.Size = new System.Drawing.Size(154, 22);
+            this.txtCurso.TabIndex = 3;
             // 
             // label5
             // 
@@ -230,7 +230,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DictadoConfirma";
-            this.Text = "DictadoConfirma";
+            this.Text = "Confirmar";
             this.Load += new System.EventHandler(this.DictadoConfirma_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

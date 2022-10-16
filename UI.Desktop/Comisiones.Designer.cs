@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Comisiones));
             this.tcComisiones = new System.Windows.Forms.ToolStripContainer();
             this.tlComisiones = new System.Windows.Forms.TableLayoutPanel();
             this.dgvComisiones = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anioEspecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comisionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -42,8 +43,6 @@
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.anioEspecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcComisiones.ContentPanel.SuspendLayout();
             this.tcComisiones.TopToolStripPanel.SuspendLayout();
             this.tcComisiones.SuspendLayout();
@@ -59,7 +58,7 @@
             // tcComisiones.ContentPanel
             // 
             this.tcComisiones.ContentPanel.Controls.Add(this.tlComisiones);
-            this.tcComisiones.ContentPanel.Size = new System.Drawing.Size(800, 419);
+            this.tcComisiones.ContentPanel.Size = new System.Drawing.Size(800, 423);
             this.tcComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcComisiones.Location = new System.Drawing.Point(0, 0);
             this.tcComisiones.Name = "tcComisiones";
@@ -85,7 +84,7 @@
             this.tlComisiones.RowCount = 2;
             this.tlComisiones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlComisiones.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlComisiones.Size = new System.Drawing.Size(800, 419);
+            this.tlComisiones.Size = new System.Drawing.Size(800, 423);
             this.tlComisiones.TabIndex = 0;
             // 
             // dgvComisiones
@@ -108,7 +107,7 @@
             this.dgvComisiones.RowHeadersWidth = 51;
             this.dgvComisiones.RowTemplate.Height = 24;
             this.dgvComisiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComisiones.Size = new System.Drawing.Size(794, 384);
+            this.dgvComisiones.Size = new System.Drawing.Size(794, 388);
             this.dgvComisiones.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
@@ -129,6 +128,24 @@
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descripcionDataGridViewTextBoxColumn.Width = 125;
             // 
+            // iDPlanDataGridViewTextBoxColumn
+            // 
+            this.iDPlanDataGridViewTextBoxColumn.DataPropertyName = "IDPlan";
+            this.iDPlanDataGridViewTextBoxColumn.HeaderText = "Plan";
+            this.iDPlanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDPlanDataGridViewTextBoxColumn.Name = "iDPlanDataGridViewTextBoxColumn";
+            this.iDPlanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDPlanDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // anioEspecialidadDataGridViewTextBoxColumn
+            // 
+            this.anioEspecialidadDataGridViewTextBoxColumn.DataPropertyName = "AnioEspecialidad";
+            this.anioEspecialidadDataGridViewTextBoxColumn.HeaderText = "Año";
+            this.anioEspecialidadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.anioEspecialidadDataGridViewTextBoxColumn.Name = "anioEspecialidadDataGridViewTextBoxColumn";
+            this.anioEspecialidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.anioEspecialidadDataGridViewTextBoxColumn.Width = 125;
+            // 
             // comisionBindingSource
             // 
             this.comisionBindingSource.DataSource = typeof(Business.Entities.Comision);
@@ -136,9 +153,9 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(641, 393);
+            this.btnActualizar.Location = new System.Drawing.Point(561, 397);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(115, 23);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -146,9 +163,9 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 393);
+            this.btnSalir.Location = new System.Drawing.Point(682, 397);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(115, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -164,16 +181,16 @@
             this.tsbEliminar});
             this.tsComisiones.Location = new System.Drawing.Point(4, 0);
             this.tsComisiones.Name = "tsComisiones";
-            this.tsComisiones.Size = new System.Drawing.Size(100, 31);
+            this.tsComisiones.Size = new System.Drawing.Size(100, 27);
             this.tsComisiones.TabIndex = 0;
             // 
             // tsbNuevo
             // 
             this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.Image = global::UI.Desktop.Properties.Resources.plus;
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(29, 28);
+            this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
             this.tsbNuevo.Text = "toolStripButton1";
             this.tsbNuevo.ToolTipText = "Nuevo";
             this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
@@ -181,10 +198,10 @@
             // tsbEditar
             // 
             this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.edit;
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(29, 28);
+            this.tsbEditar.Size = new System.Drawing.Size(29, 24);
             this.tsbEditar.Text = "toolStripButton1";
             this.tsbEditar.ToolTipText = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
@@ -192,31 +209,13 @@
             // tsbEliminar
             // 
             this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.Image = global::UI.Desktop.Properties.Resources.delete;
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(29, 28);
+            this.tsbEliminar.Size = new System.Drawing.Size(29, 24);
             this.tsbEliminar.Text = "toolStripButton1";
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
-            // 
-            // anioEspecialidadDataGridViewTextBoxColumn
-            // 
-            this.anioEspecialidadDataGridViewTextBoxColumn.DataPropertyName = "AnioEspecialidad";
-            this.anioEspecialidadDataGridViewTextBoxColumn.HeaderText = "Año";
-            this.anioEspecialidadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.anioEspecialidadDataGridViewTextBoxColumn.Name = "anioEspecialidadDataGridViewTextBoxColumn";
-            this.anioEspecialidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.anioEspecialidadDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iDPlanDataGridViewTextBoxColumn
-            // 
-            this.iDPlanDataGridViewTextBoxColumn.DataPropertyName = "IDPlan";
-            this.iDPlanDataGridViewTextBoxColumn.HeaderText = "Plan";
-            this.iDPlanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDPlanDataGridViewTextBoxColumn.Name = "iDPlanDataGridViewTextBoxColumn";
-            this.iDPlanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDPlanDataGridViewTextBoxColumn.Width = 125;
             // 
             // Comisiones
             // 

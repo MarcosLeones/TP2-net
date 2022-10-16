@@ -206,7 +206,7 @@
             this.Controls.Add(this.tlpCursos);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CursoDesktop";
-            this.Text = "CursosDesktop";
+            this.Text = "Formulario Curso";
             this.Load += new System.EventHandler(this.CursoDesktop_Load);
             this.tlpCursos.ResumeLayout(false);
             this.tlpCursos.PerformLayout();
