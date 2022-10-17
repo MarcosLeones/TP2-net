@@ -32,8 +32,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.cbReportesPlanes = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportePlanes)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -44,6 +44,7 @@
             // 
             this.dgvReportePlanes.AllowUserToAddRows = false;
             this.dgvReportePlanes.AllowUserToDeleteRows = false;
+            this.dgvReportePlanes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReportePlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReportePlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvReportePlanes.Location = new System.Drawing.Point(3, 48);
@@ -87,6 +88,17 @@
             this.cbReportesPlanes.Text = "--Selecione Plan--";
             this.cbReportesPlanes.SelectedIndexChanged += new System.EventHandler(this.cbReportesPlanes_SelectedIndexChanged);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Location = new System.Drawing.Point(722, 408);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // toolStripContainer1
             // 
             // 
@@ -99,17 +111,6 @@
             this.toolStripContainer1.Size = new System.Drawing.Size(800, 450);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(722, 408);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // ReportesPlanesDesktop
             // 
