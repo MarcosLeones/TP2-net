@@ -99,5 +99,13 @@ namespace UI.Desktop
             RegistroNotasDesktop regNotas = new RegistroNotasDesktop(Sesion);
             regNotas.ShowDialog();
         }
+
+        private void btnRepoCursos_Click(object sender, EventArgs e)
+        {
+            ReportesCursos repCursos = new ReportesCursos();
+            this.Hide();
+            repCursos.ShowDialog();
+            this.Show();
+        }
     }
 }

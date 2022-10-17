@@ -300,6 +300,9 @@
     <EmbeddedResource Include="Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesCursos.resx">
+      <DependentUpon>ReportesCursos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesPlanesDesktop.resx">
       <DependentUpon>ReportesPlanesDesktop.cs</DependentUpon>
     </EmbeddedResource>
