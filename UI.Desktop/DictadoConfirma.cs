@@ -13,7 +13,7 @@ using Util;
 
 namespace UI.Desktop
 {
-    public partial class DictadoConfirma : Form
+    public partial class DictadoConfirma : ApplicationForm
     {
         public Persona Sesion { get; set; }
         public Curso CursoActual { get; set; }

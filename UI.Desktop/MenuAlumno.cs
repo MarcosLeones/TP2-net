@@ -12,8 +12,10 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class MenuAlumno : Form
+    public partial class MenuAlumno : ApplicationForm
     {
+
+
         private Persona sesion;
         public MenuAlumno()
         {
@@ -34,7 +36,7 @@ namespace UI.Desktop
         private void btnInscribirse_Click(object sender, EventArgs e)
         {
             InscripcionDesktop id = new InscripcionDesktop(sesion);
-            id.ShowDialog();
+            this.HideAndShow(id);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace UI.Desktop
         private void btnNotas_Click(object sender, EventArgs e)
         {
             ListadoNotasDesktop lnd = new ListadoNotasDesktop(sesion);
-            lnd.ShowDialog();
+            this.HideAndShow(lnd);
         }
     }
 }

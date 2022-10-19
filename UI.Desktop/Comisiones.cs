@@ -13,7 +13,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class Comisiones : Form
+    public partial class Comisiones : ApplicationForm
     {
         public Comisiones()
         {

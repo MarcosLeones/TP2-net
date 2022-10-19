@@ -12,7 +12,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class DictadoDesktop : Form
+    public partial class DictadoDesktop : ApplicationForm
     {
         public Persona Sesion { get; set; }
 
@@ -57,7 +57,7 @@ namespace UI.Desktop
             int idMateria = (int)cbMaterias.SelectedValue;
 
             DictadoConfirma dc = new DictadoConfirma(Sesion, idPlan, idComision, idMateria);
-            dc.ShowDialog();
+            this.HideAndShow(dc);
         }
     }
 }

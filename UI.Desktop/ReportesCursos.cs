@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-    public partial class ReportesCursos : Form
+    public partial class ReportesCursos : ApplicationForm
     {
         private MateriaLogic materia = new MateriaLogic();
         private List<Materia> listaMaterias = new List<Materia>();

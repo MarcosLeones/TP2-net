@@ -13,7 +13,7 @@ using Util;
 
 namespace UI.Desktop
 {
-    public partial class Personas : Form
+    public partial class Personas : ApplicationForm
     {
         private Persona Sesion;
         private bool isDocenteBtnClicked;
