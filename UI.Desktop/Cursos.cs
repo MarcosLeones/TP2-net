@@ -12,7 +12,7 @@ using Business.Entities;
 
 namespace UI.Desktop
 {
-    public partial class Cursos : Form
+    public partial class Cursos : ApplicationForm
     {
         public Cursos()
         {

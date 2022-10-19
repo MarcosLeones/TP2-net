@@ -12,7 +12,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class ListadoNotasDesktop : Form
+    public partial class ListadoNotasDesktop : ApplicationForm
     {
         public Persona Sesion { get; set; }
 
