@@ -101,7 +101,7 @@ namespace UI.Desktop
 
         private void btnRepoCursos_Click(object sender, EventArgs e)
         {
-            ReportesCursos repCursos = new ReportesCursos();
+            ReportesCursosDesktop repCursos = new ReportesCursosDesktop();
             this.HideAndShow(repCursos);
         }
 

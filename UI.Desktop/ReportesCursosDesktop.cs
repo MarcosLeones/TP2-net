@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-    public partial class ReportesCursos : ApplicationForm
+    public partial class ReportesCursosDesktop : ApplicationForm
     {
         private MateriaLogic materia = new MateriaLogic();
         private List<Materia> listaMaterias = new List<Materia>();
         private ComisionLogic comision = new ComisionLogic();
         private List<Comision> listaComision = new List<Comision>();
 
-        public ReportesCursos()
+        public ReportesCursosDesktop()
         {
             InitializeComponent();
         }

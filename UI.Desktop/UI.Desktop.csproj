@@ -202,11 +202,11 @@
     <Compile Include="RegistroNotasDesktop.Designer.cs">
       <DependentUpon>RegistroNotasDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportesCursos.cs">
+    <Compile Include="ReportesCursosDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportesCursos.Designer.cs">
-      <DependentUpon>ReportesCursos.cs</DependentUpon>
+    <Compile Include="ReportesCursosDesktop.Designer.cs">
+      <DependentUpon>ReportesCursosDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportesPlanesDesktop.cs">
       <SubType>Form</SubType>
@@ -300,8 +300,8 @@
     <EmbeddedResource Include="Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesCursos.resx">
-      <DependentUpon>ReportesCursos.cs</DependentUpon>
+    <EmbeddedResource Include="ReportesCursosDesktop.resx">
+      <DependentUpon>ReportesCursosDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesPlanesDesktop.resx">
       <DependentUpon>ReportesPlanesDesktop.cs</DependentUpon>
