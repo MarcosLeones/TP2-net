@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-    public partial class ReportesPlanesDesktop : Form
+    public partial class ReportesPlanesDesktop : ApplicationForm
     {
         private PlanLogic planes = new PlanLogic();
         private List<Plan> listaPlanes = new List<Plan>();

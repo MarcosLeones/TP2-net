@@ -12,7 +12,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class Materias : Form
+    public partial class Materias : ApplicationForm
     {
         public Materias()
         {

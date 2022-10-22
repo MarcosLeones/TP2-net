@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-    public partial class ReportesCursos : Form
+    public partial class ReportesCursosDesktop : ApplicationForm
     {
         private MateriaLogic materia = new MateriaLogic();
         private List<Materia> listaMaterias = new List<Materia>();
         private ComisionLogic comision = new ComisionLogic();
         private List<Comision> listaComision = new List<Comision>();
 
-        public ReportesCursos()
+        public ReportesCursosDesktop()
         {
             InitializeComponent();
         }
@@ -63,6 +63,8 @@ namespace UI.Desktop
 
         public void Listardgv()
         {
+            //this.dgvReportesCursos.Rows.Clear();
+            //this.dgvReportesCursos.Refresh();
             if (cbComision.SelectedItem != null && cbAsignatura.SelectedItem != null)
             {
 
@@ -77,6 +79,7 @@ namespace UI.Desktop
 
 
                     this.dgvReportesCursos.DataSource = listaPersonas;
+                    this.ocultarColumns();
                 }
             }
 
@@ -84,12 +87,57 @@ namespace UI.Desktop
 
         private void cbAsignatura_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             this.Listardgv();
         }
 
         private void cbComision_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.Listardgv();
+        }
+
+        private void ocultarColumns() 
+        {
+            for (int numCol = 0; numCol < dgvReportesCursos.Columns.Count; numCol++)
+            {
+                switch (dgvReportesCursos.Columns[numCol].Name)
+                {
+                    case "Direccion":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "FechaNacimiento":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "IDPlan":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "Telefono":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "NombreUsuario":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "Clave":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "Habilitado":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "TipoPersona":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "ID":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+                    case "State":
+                        dgvReportesCursos.Columns[numCol].Visible = false;
+                        continue;
+
+
+                }
+
+
+            }
         }
     }
 }

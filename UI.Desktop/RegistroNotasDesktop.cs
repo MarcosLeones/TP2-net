@@ -13,7 +13,7 @@ using Util;
 
 namespace UI.Desktop
 {
-    public partial class RegistroNotasDesktop : Form
+    public partial class RegistroNotasDesktop : ApplicationForm
     {
         public RegistroNotasLogic rnl { get; set; }
         public Persona Sesion { get; set; }

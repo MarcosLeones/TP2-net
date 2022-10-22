@@ -27,18 +27,30 @@ namespace UI.Desktop
         }
 
         public virtual void MapearDeDatos() { }
+
         public virtual void MapearADatos() { }
+
         public virtual void GuardarCambios() { }
+
         public virtual bool Validar() { return false; }
-        public void Notificar(string titulo, string mensaje, MessageBoxButtons
-        botones, MessageBoxIcon icono)
+
+        public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             MessageBox.Show(mensaje, titulo, botones, icono);
         }
+
         public void Notificar(string mensaje, MessageBoxButtons botones,
         MessageBoxIcon icono)
         {
             this.Notificar(this.Text, mensaje, botones, icono);
+        }
+
+        internal void HideAndShow(ApplicationForm appForm)
+        {
+            this.Hide();
+            appForm.ShowDialog();
+            this.Show();
+
         }
     }
 }

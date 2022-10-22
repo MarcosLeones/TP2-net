@@ -25,7 +25,7 @@ namespace Business.Logic
 
         public List<ReporteCurso> GetReporteCurso(int comisionID, int materiaId) 
         {
-            var listaAlumnos = ReporteCursonData.GetAll(comisionID, comisionID);
+            var listaAlumnos = ReporteCursonData.GetAll(comisionID, materiaId);
             return listaAlumnos;
         } 
     }

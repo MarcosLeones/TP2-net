@@ -11,8 +11,9 @@ using Business.Entities;
 
 namespace UI.Desktop
 {
-    public partial class MenuDocente : Form
+    public partial class MenuDocente : ApplicationForm
     {
+       
         public Persona Sesion { get; set; }
         public MenuDocente()
         {
@@ -34,7 +35,7 @@ namespace UI.Desktop
            //Usuarios usuarios = new Usuarios();
            //usuarios.ShowDialog();
            Personas personas = new Personas(Sesion, true);
-           personas.ShowDialog();
+           this.HideAndShow(personas);
 
            //Docentes docentes = new Docentes();
            //docentes.ShowDialog();
@@ -45,7 +46,7 @@ namespace UI.Desktop
             //Usuarios usuarios = new Usuarios();
             //usuarios.ShowDialog();
             Personas personas = new Personas(Sesion, false);
-            personas.ShowDialog();
+            this.HideAndShow(personas);
             //Alumnos alumnos = new Alumnos();
             //alumnos.ShowDialog();
         }
@@ -53,51 +54,58 @@ namespace UI.Desktop
         private void btnEspecialidades_Click(object sender, EventArgs e)
         {
             Especialidades especialidades = new Especialidades();
-            especialidades.ShowDialog();
+            this.HideAndShow(especialidades);
         }
 
         private void btnPlanes_Click(object sender, EventArgs e)
         {
             Planes planes = new Planes();
-            planes.ShowDialog();
+            this.HideAndShow(planes);
         }
 
         private void btnMaterias_Click(object sender, EventArgs e)
         {
             Materias materias = new Materias();
-            materias.ShowDialog();
+            this.HideAndShow(materias);
         }
 
         private void btnComisiones_Click(object sender, EventArgs e)
         {
             Comisiones comisiones = new Comisiones();
-            comisiones.ShowDialog();
+            this.HideAndShow(comisiones);
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
             Cursos cursos = new Cursos();
-            cursos.ShowDialog();
+            this.HideAndShow(cursos);
         }
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             DictadoDesktop dictadoDesktop = new DictadoDesktop(Sesion);
-            dictadoDesktop.ShowDialog();
+            this.HideAndShow(dictadoDesktop);
         }
 
         private void btnRepoPlanes_Click(object sender, EventArgs e)
         {
             ReportesPlanesDesktop repPlanes = new ReportesPlanesDesktop();
-            this.Hide();
-            repPlanes.ShowDialog();
-            this.Show();
+            this.HideAndShow(repPlanes);
         }
 
         private void btnNotas_Click(object sender, EventArgs e)
         {
             RegistroNotasDesktop regNotas = new RegistroNotasDesktop(Sesion);
-            regNotas.ShowDialog();
+            this.HideAndShow(regNotas);
         }
+
+        private void btnRepoCursos_Click(object sender, EventArgs e)
+        {
+            ReportesCursosDesktop repCursos = new ReportesCursosDesktop();
+            this.HideAndShow(repCursos);
+        }
+
+
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-    partial class ReportesCursos
+    partial class ReportesCursosDesktop
     {
         /// <summary>
         /// Required designer variable.
@@ -63,6 +63,7 @@
             // 
             this.dgvReportesCursos.AllowUserToAddRows = false;
             this.dgvReportesCursos.AllowUserToDeleteRows = false;
+            this.dgvReportesCursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReportesCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReportesCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvReportesCursos.Location = new System.Drawing.Point(4, 59);
