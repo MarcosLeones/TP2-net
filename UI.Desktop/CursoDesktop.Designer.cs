@@ -41,6 +41,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbComisiones = new System.Windows.Forms.ComboBox();
             this.cbMaterias = new System.Windows.Forms.ComboBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tlpCursos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +66,8 @@
             this.tlpCursos.Controls.Add(this.btnCancelar, 3, 3);
             this.tlpCursos.Controls.Add(this.cbComisiones, 1, 1);
             this.tlpCursos.Controls.Add(this.cbMaterias, 3, 1);
+            this.tlpCursos.Controls.Add(this.txtDescripcion, 3, 0);
+            this.tlpCursos.Controls.Add(this.label1, 2, 0);
             this.tlpCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCursos.Location = new System.Drawing.Point(0, 0);
             this.tlpCursos.Margin = new System.Windows.Forms.Padding(4);
@@ -198,6 +202,24 @@
             this.cbMaterias.Size = new System.Drawing.Size(314, 24);
             this.cbMaterias.TabIndex = 0;
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescripcion.Location = new System.Drawing.Point(643, 68);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(314, 22);
+            this.txtDescripcion.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(555, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Descripción:";
+            // 
             // CursoDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -206,7 +228,7 @@
             this.Controls.Add(this.tlpCursos);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CursoDesktop";
-            this.Text = "CursosDesktop";
+            this.Text = "Formulario Curso";
             this.Load += new System.EventHandler(this.CursoDesktop_Load);
             this.tlpCursos.ResumeLayout(false);
             this.tlpCursos.PerformLayout();
@@ -229,5 +251,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbComisiones;
         private System.Windows.Forms.ComboBox cbMaterias;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -29,27 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Planes));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tcPlanes = new System.Windows.Forms.TableLayoutPanel();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
-            this.tsPlanes = new System.Windows.Forms.ToolStrip();
-            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDEspecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tsPlanes = new System.Windows.Forms.ToolStrip();
+            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tcPlanes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
-            this.tsPlanes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.planBindingSource)).BeginInit();
+            this.tsPlanes.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -58,7 +57,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tcPlanes);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 419);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 423);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -84,15 +83,15 @@
             this.tcPlanes.RowCount = 2;
             this.tcPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tcPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tcPlanes.Size = new System.Drawing.Size(800, 419);
+            this.tcPlanes.Size = new System.Drawing.Size(800, 423);
             this.tcPlanes.TabIndex = 0;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnActualizar.Location = new System.Drawing.Point(641, 393);
+            this.btnActualizar.Location = new System.Drawing.Point(603, 397);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(94, 23);
             this.btnActualizar.TabIndex = 0;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -100,9 +99,9 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 393);
+            this.btnSalir.Location = new System.Drawing.Point(703, 397);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(94, 23);
             this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -127,8 +126,39 @@
             this.dgvPlanes.RowHeadersWidth = 51;
             this.dgvPlanes.RowTemplate.Height = 24;
             this.dgvPlanes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlanes.Size = new System.Drawing.Size(794, 384);
+            this.dgvPlanes.Size = new System.Drawing.Size(794, 388);
             this.dgvPlanes.TabIndex = 2;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // iDEspecialidadDataGridViewTextBoxColumn
+            // 
+            this.iDEspecialidadDataGridViewTextBoxColumn.DataPropertyName = "IDEspecialidad";
+            this.iDEspecialidadDataGridViewTextBoxColumn.HeaderText = "Especialidad";
+            this.iDEspecialidadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDEspecialidadDataGridViewTextBoxColumn.Name = "iDEspecialidadDataGridViewTextBoxColumn";
+            this.iDEspecialidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDEspecialidadDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // planBindingSource
+            // 
+            this.planBindingSource.DataSource = typeof(Business.Entities.Plan);
             // 
             // tsPlanes
             // 
@@ -146,7 +176,7 @@
             // tsbNuevo
             // 
             this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.Image = global::UI.Desktop.Properties.Resources.plus;
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
             this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
@@ -157,7 +187,7 @@
             // tsbEditar
             // 
             this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.edit;
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
             this.tsbEditar.Size = new System.Drawing.Size(29, 24);
@@ -167,41 +197,13 @@
             // tsbEliminar
             // 
             this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.Image = global::UI.Desktop.Properties.Resources.delete;
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
             this.tsbEliminar.Size = new System.Drawing.Size(29, 24);
             this.tsbEliminar.Text = "toolStripButton1";
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iDEspecialidadDataGridViewTextBoxColumn
-            // 
-            this.iDEspecialidadDataGridViewTextBoxColumn.DataPropertyName = "IDEspecialidad";
-            this.iDEspecialidadDataGridViewTextBoxColumn.HeaderText = "Especialidad";
-            this.iDEspecialidadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDEspecialidadDataGridViewTextBoxColumn.Name = "iDEspecialidadDataGridViewTextBoxColumn";
-            this.iDEspecialidadDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // planBindingSource
-            // 
-            this.planBindingSource.DataSource = typeof(Business.Entities.Plan);
             // 
             // Planes
             // 
@@ -219,9 +221,9 @@
             this.toolStripContainer1.PerformLayout();
             this.tcPlanes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planBindingSource)).EndInit();
             this.tsPlanes.ResumeLayout(false);
             this.tsPlanes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.planBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

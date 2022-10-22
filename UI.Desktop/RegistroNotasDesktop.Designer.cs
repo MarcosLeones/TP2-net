@@ -34,11 +34,6 @@
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.alumnoNotaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.alumnoNotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.alumnoNotaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.alumnoNotaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvAlumnosNotas = new System.Windows.Forms.DataGridView();
             this.iDAlumnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.legajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,12 +45,17 @@
             this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.condicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alumnoNotaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.alumnoNotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.alumnoNotaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.alumnoNotaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoNotaBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoNotaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoNotaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoNotaBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosNotas)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -95,7 +95,7 @@
             this.btnSiguiente.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSiguiente.Location = new System.Drawing.Point(403, 11);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.Size = new System.Drawing.Size(90, 23);
             this.btnSiguiente.TabIndex = 1;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -104,9 +104,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.Location = new System.Drawing.Point(3, 424);
+            this.btnCancelar.Location = new System.Drawing.Point(3, 417);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(74, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(74, 30);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -115,39 +115,13 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(723, 424);
+            this.btnGuardar.Location = new System.Drawing.Point(723, 417);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(74, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(74, 30);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Curso:";
-            // 
-            // alumnoNotaBindingSource3
-            // 
-            this.alumnoNotaBindingSource3.DataSource = typeof(Util.AlumnoNota);
-            // 
-            // alumnoNotaBindingSource
-            // 
-            this.alumnoNotaBindingSource.DataSource = typeof(Util.AlumnoNota);
-            // 
-            // alumnoNotaBindingSource1
-            // 
-            this.alumnoNotaBindingSource1.DataSource = typeof(Util.AlumnoNota);
-            // 
-            // alumnoNotaBindingSource2
-            // 
-            this.alumnoNotaBindingSource2.DataSource = typeof(Util.AlumnoNota);
             // 
             // dgvAlumnosNotas
             // 
@@ -271,6 +245,32 @@
             this.IDInscripcion.Visible = false;
             this.IDInscripcion.Width = 125;
             // 
+            // alumnoNotaBindingSource3
+            // 
+            this.alumnoNotaBindingSource3.DataSource = typeof(Util.AlumnoNota);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Curso:";
+            // 
+            // alumnoNotaBindingSource
+            // 
+            this.alumnoNotaBindingSource.DataSource = typeof(Util.AlumnoNota);
+            // 
+            // alumnoNotaBindingSource1
+            // 
+            this.alumnoNotaBindingSource1.DataSource = typeof(Util.AlumnoNota);
+            // 
+            // alumnoNotaBindingSource2
+            // 
+            this.alumnoNotaBindingSource2.DataSource = typeof(Util.AlumnoNota);
+            // 
             // RegistroNotasDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,15 +278,15 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "RegistroNotasDesktop";
-            this.Text = "RegistroNotas";
+            this.Text = "Registro de Notas";
             this.Load += new System.EventHandler(this.RegistroNotasDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosNotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoNotaBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoNotaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoNotaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoNotaBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosNotas)).EndInit();
             this.ResumeLayout(false);
 
         }

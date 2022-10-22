@@ -62,15 +62,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(830, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnSiguiente
             // 
             this.btnSiguiente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSiguiente.Location = new System.Drawing.Point(722, 424);
+            this.btnSiguiente.Location = new System.Drawing.Point(722, 412);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.Size = new System.Drawing.Size(105, 35);
             this.btnSiguiente.TabIndex = 1;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.Location = new System.Drawing.Point(3, 424);
+            this.btnCancelar.Location = new System.Drawing.Point(3, 412);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(105, 35);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(203, 48);
+            this.label1.Location = new System.Drawing.Point(212, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 6;
@@ -101,7 +101,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(174, 160);
+            this.label2.Location = new System.Drawing.Point(183, 160);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(185, 272);
+            this.label3.Location = new System.Drawing.Point(194, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 8;
@@ -121,37 +121,37 @@
             // 
             this.cbComisiones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbComisiones.FormattingEnabled = true;
-            this.cbComisiones.Location = new System.Drawing.Point(243, 156);
+            this.cbComisiones.Location = new System.Drawing.Point(252, 156);
             this.cbComisiones.Name = "cbComisiones";
-            this.cbComisiones.Size = new System.Drawing.Size(314, 24);
+            this.cbComisiones.Size = new System.Drawing.Size(326, 24);
             this.cbComisiones.TabIndex = 9;
             // 
             // cbMaterias
             // 
             this.cbMaterias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbMaterias.FormattingEnabled = true;
-            this.cbMaterias.Location = new System.Drawing.Point(243, 268);
+            this.cbMaterias.Location = new System.Drawing.Point(252, 268);
             this.cbMaterias.Name = "cbMaterias";
-            this.cbMaterias.Size = new System.Drawing.Size(314, 24);
+            this.cbMaterias.Size = new System.Drawing.Size(326, 24);
             this.cbMaterias.TabIndex = 10;
             // 
             // cbPlanes
             // 
             this.cbPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPlanes.FormattingEnabled = true;
-            this.cbPlanes.Location = new System.Drawing.Point(243, 44);
+            this.cbPlanes.Location = new System.Drawing.Point(252, 44);
             this.cbPlanes.Name = "cbPlanes";
-            this.cbPlanes.Size = new System.Drawing.Size(314, 24);
+            this.cbPlanes.Size = new System.Drawing.Size(326, 24);
             this.cbPlanes.TabIndex = 11;
             // 
             // DictadoDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(830, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DictadoDesktop";
-            this.Text = "DictadoDesktop";
+            this.Text = "Dictado";
             this.Load += new System.EventHandler(this.DictadoDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

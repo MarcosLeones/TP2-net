@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materias));
             this.tcMaterias = new System.Windows.Forms.ToolStripContainer();
-            this.tsMatarias = new System.Windows.Forms.ToolStrip();
             this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.tsMatarias = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hSSemanalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,10 +47,10 @@
             this.tcMaterias.ContentPanel.SuspendLayout();
             this.tcMaterias.TopToolStripPanel.SuspendLayout();
             this.tcMaterias.SuspendLayout();
-            this.tsMatarias.SuspendLayout();
             this.tlMaterias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).BeginInit();
+            this.tsMatarias.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMaterias
@@ -60,30 +59,19 @@
             // tcMaterias.ContentPanel
             // 
             this.tcMaterias.ContentPanel.Controls.Add(this.tlMaterias);
-            this.tcMaterias.ContentPanel.Size = new System.Drawing.Size(800, 423);
+            this.tcMaterias.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcMaterias.ContentPanel.Size = new System.Drawing.Size(600, 339);
             this.tcMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcMaterias.Location = new System.Drawing.Point(0, 0);
+            this.tcMaterias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcMaterias.Name = "tcMaterias";
-            this.tcMaterias.Size = new System.Drawing.Size(800, 450);
+            this.tcMaterias.Size = new System.Drawing.Size(600, 366);
             this.tcMaterias.TabIndex = 0;
             this.tcMaterias.Text = "toolStripContainer1";
             // 
             // tcMaterias.TopToolStripPanel
             // 
             this.tcMaterias.TopToolStripPanel.Controls.Add(this.tsMatarias);
-            // 
-            // tsMatarias
-            // 
-            this.tsMatarias.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsMatarias.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.tsMatarias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNuevo,
-            this.tsbEditar,
-            this.tsbEliminar});
-            this.tsMatarias.Location = new System.Drawing.Point(4, 0);
-            this.tsMatarias.Name = "tsMatarias";
-            this.tsMatarias.Size = new System.Drawing.Size(139, 27);
-            this.tsMatarias.TabIndex = 0;
             // 
             // tlMaterias
             // 
@@ -95,11 +83,12 @@
             this.tlMaterias.Controls.Add(this.btnSalir, 1, 1);
             this.tlMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlMaterias.Location = new System.Drawing.Point(0, 0);
+            this.tlMaterias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlMaterias.Name = "tlMaterias";
             this.tlMaterias.RowCount = 2;
             this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlMaterias.Size = new System.Drawing.Size(800, 423);
+            this.tlMaterias.Size = new System.Drawing.Size(600, 339);
             this.tlMaterias.TabIndex = 0;
             // 
             // dgvMaterias
@@ -117,21 +106,27 @@
             this.tlMaterias.SetColumnSpan(this.dgvMaterias, 2);
             this.dgvMaterias.DataSource = this.materiaBindingSource;
             this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
+            this.dgvMaterias.Location = new System.Drawing.Point(2, 2);
+            this.dgvMaterias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
             this.dgvMaterias.RowHeadersWidth = 51;
             this.dgvMaterias.RowTemplate.Height = 24;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterias.Size = new System.Drawing.Size(794, 388);
+            this.dgvMaterias.Size = new System.Drawing.Size(596, 312);
             this.dgvMaterias.TabIndex = 0;
+            // 
+            // materiaBindingSource
+            // 
+            this.materiaBindingSource.DataSource = typeof(Business.Entities.Materia);
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnActualizar.Location = new System.Drawing.Point(641, 397);
+            this.btnActualizar.Location = new System.Drawing.Point(430, 318);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(82, 19);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -139,21 +134,35 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 397);
+            this.btnSalir.Location = new System.Drawing.Point(516, 318);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(82, 19);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // tsMatarias
+            // 
+            this.tsMatarias.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsMatarias.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsMatarias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNuevo,
+            this.tsbEditar,
+            this.tsbEliminar});
+            this.tsMatarias.Location = new System.Drawing.Point(4, 0);
+            this.tsMatarias.Name = "tsMatarias";
+            this.tsMatarias.Size = new System.Drawing.Size(84, 27);
+            this.tsMatarias.TabIndex = 0;
+            // 
             // tsbNuevo
             // 
             this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.Image = global::UI.Desktop.Properties.Resources.plus;
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
+            this.tsbNuevo.Size = new System.Drawing.Size(24, 24);
             this.tsbNuevo.Text = "toolStripButton1";
             this.tsbNuevo.ToolTipText = "Nuevo";
             this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
@@ -161,10 +170,10 @@
             // tsbEditar
             // 
             this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.edit;
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEditar.Size = new System.Drawing.Size(24, 24);
             this.tsbEditar.Text = "toolStripButton1";
             this.tsbEditar.ToolTipText = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
@@ -172,17 +181,13 @@
             // tsbEliminar
             // 
             this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.Image = global::UI.Desktop.Properties.Resources.delete;
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEliminar.Size = new System.Drawing.Size(24, 24);
             this.tsbEliminar.Text = "toolStripButton1";
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
-            // 
-            // materiaBindingSource
-            // 
-            this.materiaBindingSource.DataSource = typeof(Business.Entities.Materia);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -196,7 +201,7 @@
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
             this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -231,10 +236,11 @@
             // 
             // Materias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tcMaterias);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Materias";
             this.Text = "Materias";
             this.Load += new System.EventHandler(this.Materias_Load);
@@ -243,11 +249,11 @@
             this.tcMaterias.TopToolStripPanel.PerformLayout();
             this.tcMaterias.ResumeLayout(false);
             this.tcMaterias.PerformLayout();
-            this.tsMatarias.ResumeLayout(false);
-            this.tsMatarias.PerformLayout();
             this.tlMaterias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).EndInit();
+            this.tsMatarias.ResumeLayout(false);
+            this.tsMatarias.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -85,9 +85,9 @@
             // btnVolver
             // 
             this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolver.Location = new System.Drawing.Point(723, 424);
+            this.btnVolver.Location = new System.Drawing.Point(723, 420);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(74, 23);
+            this.btnVolver.Size = new System.Drawing.Size(74, 27);
             this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ListadoNotasDesktop";
-            this.Text = "ListadoNotasDesktop";
+            this.Text = "Mis Notas";
             this.Load += new System.EventHandler(this.ListadoNotasDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.dgvDocentes = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.txtCurso = new System.Windows.Forms.TextBox();
             this.txtMateria = new System.Windows.Forms.TextBox();
             this.txtComision = new System.Windows.Forms.TextBox();
             this.txtPlan = new System.Windows.Forms.TextBox();
-            this.dgvDocentes = new System.Windows.Forms.DataGridView();
-            this.docenteCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.docenteCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docenteCursoBindingSource)).BeginInit();
@@ -85,17 +85,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(723, 424);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(74, 23);
-            this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -106,6 +95,45 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // dgvDocentes
+            // 
+            this.dgvDocentes.AllowUserToAddRows = false;
+            this.dgvDocentes.AllowUserToDeleteRows = false;
+            this.dgvDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.dgvDocentes, 2);
+            this.dgvDocentes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDocentes.Enabled = false;
+            this.dgvDocentes.Location = new System.Drawing.Point(83, 228);
+            this.dgvDocentes.Name = "dgvDocentes";
+            this.dgvDocentes.ReadOnly = true;
+            this.dgvDocentes.RowHeadersVisible = false;
+            this.dgvDocentes.RowHeadersWidth = 51;
+            this.dgvDocentes.RowTemplate.Height = 24;
+            this.dgvDocentes.Size = new System.Drawing.Size(634, 174);
+            this.dgvDocentes.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
+            this.label1.Location = new System.Drawing.Point(334, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Confirmar Inscripción";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.Location = new System.Drawing.Point(723, 424);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(74, 23);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtCurso
             // 
@@ -142,44 +170,6 @@
             this.txtPlan.ReadOnly = true;
             this.txtPlan.Size = new System.Drawing.Size(262, 22);
             this.txtPlan.TabIndex = 3;
-            // 
-            // dgvDocentes
-            // 
-            this.dgvDocentes.AllowUserToAddRows = false;
-            this.dgvDocentes.AllowUserToDeleteRows = false;
-            this.dgvDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dgvDocentes, 2);
-            this.dgvDocentes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDocentes.Location = new System.Drawing.Point(83, 228);
-            this.dgvDocentes.Name = "dgvDocentes";
-            this.dgvDocentes.ReadOnly = true;
-            this.dgvDocentes.RowHeadersWidth = 51;
-            this.dgvDocentes.RowTemplate.Height = 24;
-            this.dgvDocentes.Size = new System.Drawing.Size(634, 174);
-            this.dgvDocentes.TabIndex = 7;
-            // 
-            // docenteCursoBindingSource
-            // 
-            this.docenteCursoBindingSource.DataSource = typeof(Business.Entities.DocenteCurso);
-            // 
-            // personaBindingSource
-            // 
-            this.personaBindingSource.DataSource = typeof(Business.Entities.Persona);
-            // 
-            // personaBindingSource1
-            // 
-            this.personaBindingSource1.DataSource = typeof(Business.Entities.Persona);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
-            this.label1.Location = new System.Drawing.Point(334, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Confirmar Inscripción";
             // 
             // label2
             // 
@@ -221,6 +211,18 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Curso: ";
             // 
+            // docenteCursoBindingSource
+            // 
+            this.docenteCursoBindingSource.DataSource = typeof(Business.Entities.DocenteCurso);
+            // 
+            // personaBindingSource
+            // 
+            this.personaBindingSource.DataSource = typeof(Business.Entities.Persona);
+            // 
+            // personaBindingSource1
+            // 
+            this.personaBindingSource1.DataSource = typeof(Business.Entities.Persona);
+            // 
             // InscripcionConfirma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -228,7 +230,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "InscripcionConfirma";
-            this.Text = "InscripcionConfirma";
+            this.Text = "Confirmar Inscripción";
             this.Load += new System.EventHandler(this.InscripcionConfirma_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

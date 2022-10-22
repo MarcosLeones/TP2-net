@@ -126,7 +126,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EspecialidadDesktop";
-            this.Text = "EspecialidadDesktop";
+            this.Text = "Formulario Especialidad";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
