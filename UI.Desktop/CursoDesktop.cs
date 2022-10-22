@@ -37,6 +37,7 @@ namespace UI.Desktop
             this.txtIDcurso.Text = this.CursoActual.ID.ToString();
             this.txtAnioCalendario.Text = this.CursoActual.AnioCalendario.ToString();
             this.txtCupo.Text = this.CursoActual.cupo.ToString();
+            this.txtDescripcion.Text = this.CursoActual.Descripcion.ToString();
 
             switch (this.Modo)
             {
@@ -66,6 +67,7 @@ namespace UI.Desktop
                 this.CursoActual.cupo = int.Parse(this.txtCupo.Text);
                 this.CursoActual.IDComision = (int)this.cbComisiones.SelectedValue;
                 this.CursoActual.IDMateria = (int)this.cbMaterias.SelectedValue;
+                this.CursoActual.Descripcion = (string)this.txtDescripcion.Text;
             }
 
             switch (this.Modo)
@@ -93,7 +95,7 @@ namespace UI.Desktop
         }
         public override bool Validar() {
 
-            if (this.txtCupo.Text.Length == 0 || this.txtAnioCalendario.Text.Length == 0 )
+            if (this.txtCupo.Text.Length == 0 || this.txtAnioCalendario.Text.Length == 0 || this.txtDescripcion.Text.Length == 0)
             {
                 Notificar("Error", "Hay campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

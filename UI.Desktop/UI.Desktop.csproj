@@ -303,9 +303,6 @@
     <EmbeddedResource Include="RegistroNotasDesktop.resx">
       <DependentUpon>RegistroNotasDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesCursos.resx">
-      <DependentUpon>ReportesCursos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReportesCursosDesktop.resx">
       <DependentUpon>ReportesCursosDesktop.cs</DependentUpon>
     </EmbeddedResource>
