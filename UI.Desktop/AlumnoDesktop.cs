@@ -148,8 +148,15 @@ namespace UI.Desktop
         {
             if (Validar())
             {
-                GuardarCambios();
+                try {
+                    GuardarCambios(); 
+                } 
+                catch (Exception ex){
+                    Notificar("ERROR", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally {
                 Close();
+                }
             }
         }
 
