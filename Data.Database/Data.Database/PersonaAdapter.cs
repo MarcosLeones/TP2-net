@@ -211,7 +211,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO personas (nombre, apellido, email, direccion, telefono, fecha_nac, legajo, tipo_persona, id_plan, nombre_usuario, clave, habilitado) VALUES (@nombre, @apellido, @email, @direccion, @telefono, @fecha_nac,@legajo, @tipo_persona, @id_plan, @nombre_usuario, @clave, @habilitado) select @@identity", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO personas (nombre, apellido, email, direccion, telefono, fecha_nac, tipo_persona, id_plan, nombre_usuario, clave, habilitado) VALUES (@nombre, @apellido, @email, @direccion, @telefono, @fecha_nac, @tipo_persona, @id_plan, @nombre_usuario, @clave, @habilitado) select @@identity", sqlConn);
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
@@ -220,7 +220,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
-                cmdSave.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = persona.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = persona.Clave;

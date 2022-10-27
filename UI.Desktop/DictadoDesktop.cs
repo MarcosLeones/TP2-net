@@ -55,9 +55,12 @@ namespace UI.Desktop
             int idPlan = (int)cbPlanes.SelectedValue;
             int idComision = (int)cbComisiones.SelectedValue;
             int idMateria = (int)cbMaterias.SelectedValue;
-
-            DictadoConfirma dc = new DictadoConfirma(Sesion, idPlan, idComision, idMateria);
-            this.HideAndShow(dc);
+            try { 
+                DictadoConfirma dc = new DictadoConfirma(Sesion, idPlan, idComision, idMateria);
+                this.HideAndShow(dc);
+            } catch (Exception ex) {
+                Notificar("ERROR", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

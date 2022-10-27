@@ -107,8 +107,18 @@ namespace UI.Desktop
         {
             if (Validar())
             {
-                GuardarCambios();
-                Close();
+                try
+                {
+                    GuardarCambios();
+                }
+                catch (Exception ex)
+                {
+                    Notificar("ERROR", ex.Message + "\nNo se ha podido completar la acción.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    Close();
+                }
             }
         }
 
