@@ -39,7 +39,8 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
-            this.idEspecialidadTextBox.Text = this.Entity.IDEspecialidad.ToString();
+            //this.idEspecialidadTextBox.Text = this.Entity.IDEspecialidad.ToString();
+            this.especialidadDropDown.SelectedValue = this.Entity.IDEspecialidad.ToString();
         }
 
 
@@ -47,7 +48,8 @@ namespace UI.Web
         private void LoadEntity(Plan pl)
         {
             pl.Descripcion = this.descripcionTextBox.Text;
-            pl.IDEspecialidad = Int32.Parse(this.idEspecialidadTextBox.Text);
+            //pl.IDEspecialidad = Int32.Parse(this.idEspecialidadTextBox.Text);
+            pl.IDEspecialidad = int.Parse(especialidadDropDown.SelectedValue);
         }
 
 
@@ -65,14 +67,15 @@ namespace UI.Web
         protected override void ClearForm()
         {
             this.descripcionTextBox.Text = String.Empty;
-            this.idEspecialidadTextBox.Text = String.Empty;
+            //this.idEspecialidadTextBox.Text = String.Empty;
         }
 
 
         protected override void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
-            this.idEspecialidadTextBox.Enabled = enable;
+            //this.idEspecialidadTextBox.Enabled = enable;
+            this.especialidadDropDown.Enabled = enable;
         }
 
         protected override void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -113,12 +116,12 @@ namespace UI.Web
         public bool Validaciones()
         {
             descripcionValidator.Validate();
-            idEspecialidadValidator.Validate();
-            idEspecialidadIntValidator.Validate();
+            //idEspecialidadValidator.Validate();
+            //idEspecialidadIntValidator.Validate();
 
             if (!this.descripcionValidator.IsValid) return false;
-            if (!this.idEspecialidadValidator.IsValid) return false;
-            if (!this.idEspecialidadIntValidator.IsValid) return false;
+            //if (!this.idEspecialidadValidator.IsValid) return false;
+            //if (!this.idEspecialidadIntValidator.IsValid) return false;
             return true;
         }
 

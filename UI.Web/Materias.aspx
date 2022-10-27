@@ -23,13 +23,13 @@
     
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="descripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
-        <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="descripcionTextBox" runat="server" Width="198px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="descripcionValidator" runat="server" ControlToValidate="descripcionTextBox"   
 ErrorMessage="La descripcion no puede estar vacía" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator> 
         <br />
 
         <asp:Label ID="hsSemanalesLabel" runat="server" Text="Horas Semanales: "></asp:Label>
-        <asp:TextBox ID="hsSemanalesTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="hsSemanalesTextBox" runat="server" Width="152px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="hsSemanalesValidator" runat="server" ControlToValidate="hsSemanalesTextBox"   
 ErrorMessage="Igrese las horas semanales" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator> 
         <asp:CompareValidator ID="hsSemanalesIntValidator" runat="server" ControlToValidate="hsSemanalesTextBox"
@@ -38,7 +38,7 @@ ErrorMessage="Igrese las horas semanales" ForeColor="Red" ValidationGroup="vg">*
         <br />
 
         <asp:Label ID="hsTotalesLabel" runat="server" Text="Horas Totales: "></asp:Label>
-        <asp:TextBox ID="hsTotalesTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="hsTotalesTextBox" runat="server" Width="178px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="hsTotalesValidator" runat="server" ControlToValidate="hsTotalesTextBox"   
 ErrorMessage="Igrese las horas totales" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator> 
         <asp:CompareValidator ID="hsTotalesIntValidator" runat="server" ControlToValidate="hsTotalesTextBox"
@@ -47,12 +47,14 @@ ErrorMessage="Igrese las horas totales" ForeColor="Red" ValidationGroup="vg">*</
         <br />
 
         <asp:Label ID="idPlanLabel" runat="server" Text="Plan: "></asp:Label>
-        <asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="planDropDown" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Descripcion" DataValueField="ID" Width="266px"></asp:DropDownList>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.PlanLogic"></asp:ObjectDataSource>
+        <!--<asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="idPlanValidator" runat="server" ControlToValidate="idPlanTextBox"   
-ErrorMessage="El plan no puede estar vacío" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator> 
+ErrorMessage="El plan no puede estar vacío" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>        
         <asp:CompareValidator ID="idPlanIntValidator" runat="server" ControlToValidate="idPlanTextBox"
             Type="Integer" ErrorMessage="El id del plan ser un número entero" Operator="DataTypeCheck"
-            ForeColor="Red" ValidationGroup="vg">*</asp:CompareValidator>
+            ForeColor="Red" ValidationGroup="vg">*</asp:CompareValidator>-->
         <br />
 
 
