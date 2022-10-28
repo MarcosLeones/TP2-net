@@ -24,8 +24,16 @@ namespace UI.Web
         }
 
         private Materia Entity { get; set; }
-
-
+        /*
+        protected override void Page_Load(object sender, EventArgs e)
+        {
+            base.Page_Load(sender, e);
+            this.planDropDown.DataTextField = "Descripcion";
+            this.planDropDown.DataValueField = "ID";
+            PlanLogic planLogic = new PlanLogic();
+            this.planDropDown.DataSource = planLogic.GetAll();
+            this.planDropDown.DataBind();
+        }*/
         protected override void LoadGrid()
         {
             this.gridView.DataSource = this.Logic.GetAll();
@@ -38,7 +46,8 @@ namespace UI.Web
             this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.hsSemanalesTextBox.Text = this.Entity.HSSemanales.ToString();
             this.hsTotalesTextBox.Text = this.Entity.HSTotales.ToString();
-            this.idPlanTextBox.Text = this.Entity.IDPlan.ToString();
+            //this.idPlanTextBox.Text = this.Entity.IDPlan.ToString();
+            this.planDropDown.SelectedValue = this.Entity.IDPlan.ToString();
         }
 
         private void LoadEntity(Materia mt)
@@ -46,7 +55,8 @@ namespace UI.Web
             mt.Descripcion = this.descripcionTextBox.Text;
             mt.HSSemanales = int.Parse(this.hsSemanalesTextBox.Text);
             mt.HSTotales = int.Parse(this.hsTotalesTextBox.Text);
-            mt.IDPlan = int.Parse(this.idPlanTextBox.Text);
+           //mt.IDPlan = int.Parse(this.idPlanTextBox.Text);
+            mt.IDPlan = int.Parse(planDropDown.SelectedValue);
         }
 
         private void SaveEntity(Materia mt)
@@ -65,7 +75,7 @@ namespace UI.Web
             this.descripcionTextBox.Text = String.Empty;
             this.hsSemanalesTextBox.Text = String.Empty;
             this.hsTotalesTextBox.Text = String.Empty;
-            this.idPlanTextBox.Text = String.Empty;
+            //this.idPlanTextBox.Text = String.Empty;
         }
 
 
@@ -74,7 +84,8 @@ namespace UI.Web
             this.descripcionTextBox.Enabled = enable;
             this.hsSemanalesTextBox.Enabled = enable;
             this.hsTotalesTextBox.Enabled = enable;
-            this.idPlanTextBox.Enabled = enable;
+            //this.idPlanTextBox.Enabled = enable;
+            this.planDropDown.Enabled = enable;
         }
 
    
@@ -122,16 +133,16 @@ namespace UI.Web
             hsSemanalesIntValidator.Validate();
             hsTotalesValidator.Validate();
             hsTotalesIntValidator.Validate();
-            idPlanValidator.Validate();
-            idPlanIntValidator.Validate();
+            //idPlanValidator.Validate();
+            //idPlanIntValidator.Validate();
 
             if (!this.descripcionValidator.IsValid) return false;
             if (!this.hsSemanalesValidator.IsValid) return false;
             if (!this.hsSemanalesIntValidator.IsValid) return false;
             if (!this.hsTotalesValidator.IsValid) return false;
             if (!this.hsTotalesIntValidator.IsValid) return false;
-            if (!this.idPlanValidator.IsValid) return false;
-            if (!this.idPlanIntValidator.IsValid) return false;
+            //if (!this.idPlanValidator.IsValid) return false;
+            //if (!this.idPlanIntValidator.IsValid) return false;
             return true;
         }
 

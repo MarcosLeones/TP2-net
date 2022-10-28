@@ -13,5 +13,35 @@ namespace UI.Web
         {
 
         }
+
+        protected void usuariosLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Usuarios.aspx");
+        }
+
+        protected void especialidadesLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Especialidades.aspx");
+        }
+
+        protected void planesLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Planes.aspx");
+        }
+
+        protected void comisionesLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Comisiones.aspx");
+        }
+
+        protected void materiasLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Materias.aspx");
+        }
+
+        protected void cursosLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Cursos.aspx");
+        }
     }
 }

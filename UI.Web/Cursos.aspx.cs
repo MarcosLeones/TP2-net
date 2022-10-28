@@ -39,20 +39,26 @@ namespace UI.Web
         protected override void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
+            this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.cupoTextBox.Text = this.Entity.cupo.ToString();
             this.anioTextBox.Text = this.Entity.AnioCalendario.ToString();
-            this.materiaTextBox.Text = this.Entity.IDMateria.ToString();
-            this.comisionTextBox.Text = this.Entity.IDComision.ToString();
+            //this.materiaTextBox.Text = this.Entity.IDMateria.ToString();
+            //this.comisionTextBox.Text = this.Entity.IDComision.ToString();
+            this.materiaDropDown.SelectedValue = this.Entity.IDMateria.ToString();
+            this.comisionDropDown.SelectedValue=this.Entity.IDComision.ToString();
         }
 
 
 
         private void LoadEntity(Curso curso)
         {
+            curso.Descripcion = this.descripcionTextBox.Text;
             curso.cupo = int.Parse(this.cupoTextBox.Text);
             curso.AnioCalendario = int.Parse(this.anioTextBox.Text);
-            curso.IDMateria = int.Parse(this.materiaTextBox.Text);
-            curso.IDComision = int.Parse(this.comisionTextBox.Text);
+            //curso.IDMateria = int.Parse(this.materiaTextBox.Text);
+            //curso.IDComision = int.Parse(this.comisionTextBox.Text);
+            curso.IDMateria = int.Parse(this.materiaDropDown.SelectedValue);
+            curso.IDComision = int.Parse(this.comisionDropDown.SelectedValue);
         }
 
         private void SaveEntity(Curso curso)
@@ -70,8 +76,8 @@ namespace UI.Web
         {
             this.cupoTextBox.Text = String.Empty;
             this.anioTextBox.Text = String.Empty;
-            this.materiaTextBox.Text = String.Empty;
-            this.comisionTextBox.Text = String.Empty;
+            //this.materiaTextBox.Text = String.Empty;
+            //this.comisionTextBox.Text = String.Empty;
 
 
         }
@@ -79,10 +85,13 @@ namespace UI.Web
 
         protected override void EnableForm(bool enable)
         {
+            this.descripcionTextBox.Enabled = enable;
             this.cupoTextBox.Enabled = enable;
             this.anioTextBox.Enabled = enable;
-            this.materiaTextBox.Enabled = enable;
-            this.comisionTextBox.Enabled = enable;
+            //this.materiaTextBox.Enabled = enable;
+            //this.comisionTextBox.Enabled = enable;
+            this.materiaDropDown.Enabled = enable;
+            this.comisionDropDown.Enabled = enable;
 
         }
 
@@ -127,16 +136,17 @@ namespace UI.Web
 
         public bool Validaciones()
         {
+            descripcionValidator.Validate();
             cupoValidator.Validate();
             anioValidator.Validate();
-            materiaValidator.Validate();
-            comisionValidator.Validate();
+            //materiaValidator.Validate();
+            //comisionValidator.Validate();
 
-
+            if (!this.descripcionValidator.IsValid) return false;
             if (!this.cupoValidator.IsValid) return false;
             if (!this.anioValidator.IsValid) return false;
-            if (!this.materiaValidator.IsValid) return false;
-            if (!this.materiaValidator.IsValid) return false;
+            //if (!this.materiaValidator.IsValid) return false;
+            //if (!this.comisionValidator.IsValid) return false;
 
             return true;
         }

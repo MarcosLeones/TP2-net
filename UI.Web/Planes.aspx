@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Planes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Planes.aspx.cs" Inherits="UI.Web.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+ <div class="divGridContainer">
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" 
              DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
@@ -26,12 +27,14 @@
 ErrorMessage="La descripcion no puede estar vacía" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator> 
         <br />
         <asp:Label ID="idEspecialidadLabel" runat="server" Text="Especialidad: "></asp:Label>
-        <asp:TextBox ID="idEspecialidadTextBox" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="especialidadDropDown" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Descripcion" DataValueField="ID" Width="156px"></asp:DropDownList>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.EspecialidadLogic"></asp:ObjectDataSource>
+        <!--<asp:TextBox ID="idEspecialidadTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="idEspecialidadValidator" runat="server" ControlToValidate="idEspecialidadTextBox"   
 ErrorMessage="La especialidad no puede estar vacía" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator> 
         <asp:CompareValidator ID="idEspecialidadIntValidator" runat="server" ControlToValidate="idEspecialidadTextBox"
             Type="Integer" ErrorMessage="El id de especialidad debe ser un número" Operator="DataTypeCheck"
-            ForeColor="Red" ValidationGroup="vg">*</asp:CompareValidator>
+            ForeColor="Red" ValidationGroup="vg">*</asp:CompareValidator>-->
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
@@ -41,5 +44,6 @@ ErrorMessage="La especialidad no puede estar vacía" ForeColor="Red" ValidationG
         <asp:ValidationSummary ID="formValidationSummary" runat="server" ForeColor="Red" ValidationGroup="vg"/>
     
     </asp:Panel>
+</div>
 
 </asp:Content>

@@ -26,7 +26,7 @@ namespace UI.Web
         }
 
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected virtual void Page_Load(object sender, EventArgs e)
         {
             if (_logic == null)
             {

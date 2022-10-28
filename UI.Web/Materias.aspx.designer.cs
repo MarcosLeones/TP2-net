@@ -123,6 +123,24 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label idPlanLabel;
 
         /// <summary>
+        /// planDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList planDropDown;
+
+        /// <summary>
+        /// ObjectDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+
+        /// <summary>
         /// idPlanTextBox control.
         /// </summary>
         /// <remarks>

@@ -20,7 +20,6 @@ Default skin template. The following skins are provided as examples only.
         cellpadding="5"
 
 
-
         SelectedRowStyle-BackColor="gray"
         SelcetedRowStyle-ForeColor="white"
 
