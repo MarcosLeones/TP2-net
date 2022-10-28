@@ -11,70 +11,97 @@ namespace UI.Web
 {
 
 
-    public partial class Default
+    public partial class Login
     {
 
         /// <summary>
-        /// bienvenidoLabel control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label bienvenidoLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// usuariosLinkButton control.
+        /// usuarioLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton usuariosLinkButton;
+        protected global::System.Web.UI.WebControls.Label usuarioLabel;
 
         /// <summary>
-        /// especialidadesLinkButton control.
+        /// usuarioTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton especialidadesLinkButton;
+        protected global::System.Web.UI.WebControls.TextBox usuarioTextBox;
 
         /// <summary>
-        /// planesLinkButton control.
+        /// usuarioValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton planesLinkButton;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usuarioValidator;
 
         /// <summary>
-        /// comisionesLinkButton control.
+        /// passwordLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton comisionesLinkButton;
+        protected global::System.Web.UI.WebControls.Label passwordLabel;
 
         /// <summary>
-        /// materiasLinkButton control.
+        /// passwordTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton materiasLinkButton;
+        protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
 
         /// <summary>
-        /// cursosLinkButton control.
+        /// passwordValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton cursosLinkButton;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passwordValidator;
+
+        /// <summary>
+        /// ingresarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ingresarButton;
+
+        /// <summary>
+        /// formValidationSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary formValidationSummary;
+
+        /// <summary>
+        /// mensajeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mensajeLabel;
     }
 }

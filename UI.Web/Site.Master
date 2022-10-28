@@ -4,11 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="StyleSheets/StyleSheetMaster.css" rel="stylesheet" type="text/css" />
     <title>Academia</title>
 </head>
 <body>
     <form id="bodyForm" runat="server">
-        <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource">
+        <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource" CssClass="menu">
         </asp:Menu>
         <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
         <div>
@@ -18,3 +19,4 @@
     </form>
 </body>
 </html>
+

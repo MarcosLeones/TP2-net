@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Materias" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Materias.aspx.cs" Inherits="UI.Web.Materias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+<div class="divGridContainer">
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" 
              DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
@@ -67,5 +68,6 @@ ErrorMessage="El plan no puede estar vacío" ForeColor="Red" ValidationGroup="vg
         <asp:ValidationSummary ID="formValidationSummary" runat="server" ForeColor="Red" ValidationGroup="vg"/>
 
     </asp:Panel>
+</div>
 
 </asp:Content>

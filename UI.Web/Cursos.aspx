@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Cursos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cursos.aspx.cs" Inherits="UI.Web.Cursos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+<div class="divGridContainer">
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" 
             DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
@@ -71,5 +72,6 @@ ErrorMessage="La descripción no puede estar vacía" ForeColor="Red" ValidationG
         <asp:ValidationSummary ID="formValidationSummary" runat="server" ForeColor="Red" ValidationGroup="vg"/>  
 
     </asp:Panel>
+</div>
 
 </asp:Content>
