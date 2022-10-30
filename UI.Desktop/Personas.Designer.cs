@@ -34,11 +34,6 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvPersonas = new System.Windows.Forms.DataGridView();
-            this.tsPersonas = new System.Windows.Forms.ToolStrip();
-            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.legajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,13 +44,18 @@
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.habilitadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tsPersonas = new System.Windows.Forms.ToolStrip();
+            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.tcPersonas.ContentPanel.SuspendLayout();
             this.tcPersonas.TopToolStripPanel.SuspendLayout();
             this.tcPersonas.SuspendLayout();
             this.tlPersonas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
-            this.tsPersonas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
+            this.tsPersonas.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcPersonas
@@ -117,6 +117,8 @@
             // 
             // dgvPersonas
             // 
+            this.dgvPersonas.AllowUserToAddRows = false;
+            this.dgvPersonas.AllowUserToDeleteRows = false;
             this.dgvPersonas.AutoGenerateColumns = false;
             this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -135,11 +137,106 @@
             this.dgvPersonas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPersonas.Location = new System.Drawing.Point(3, 3);
             this.dgvPersonas.Name = "dgvPersonas";
+            this.dgvPersonas.ReadOnly = true;
             this.dgvPersonas.RowHeadersWidth = 51;
             this.dgvPersonas.RowTemplate.Height = 24;
             this.dgvPersonas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersonas.Size = new System.Drawing.Size(794, 388);
             this.dgvPersonas.TabIndex = 2;
+            // 
+            // legajoDataGridViewTextBoxColumn
+            // 
+            this.legajoDataGridViewTextBoxColumn.DataPropertyName = "Legajo";
+            this.legajoDataGridViewTextBoxColumn.HeaderText = "Legajo";
+            this.legajoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.legajoDataGridViewTextBoxColumn.Name = "legajoDataGridViewTextBoxColumn";
+            this.legajoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.legajoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apellidoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreUsuarioDataGridViewTextBoxColumn
+            // 
+            this.nombreUsuarioDataGridViewTextBoxColumn.DataPropertyName = "NombreUsuario";
+            this.nombreUsuarioDataGridViewTextBoxColumn.HeaderText = "Nombre de Usuario";
+            this.nombreUsuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreUsuarioDataGridViewTextBoxColumn.Name = "nombreUsuarioDataGridViewTextBoxColumn";
+            this.nombreUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreUsuarioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefonoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
+            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechaNacimientoDataGridViewTextBoxColumn
+            // 
+            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha de Nacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
+            this.fechaNacimientoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaNacimientoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // iDPlanDataGridViewTextBoxColumn
+            // 
+            this.iDPlanDataGridViewTextBoxColumn.DataPropertyName = "IDPlan";
+            this.iDPlanDataGridViewTextBoxColumn.HeaderText = "Plan";
+            this.iDPlanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDPlanDataGridViewTextBoxColumn.Name = "iDPlanDataGridViewTextBoxColumn";
+            this.iDPlanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDPlanDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // habilitadoDataGridViewCheckBoxColumn
+            // 
+            this.habilitadoDataGridViewCheckBoxColumn.DataPropertyName = "Habilitado";
+            this.habilitadoDataGridViewCheckBoxColumn.HeaderText = "Habilitado";
+            this.habilitadoDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.habilitadoDataGridViewCheckBoxColumn.Name = "habilitadoDataGridViewCheckBoxColumn";
+            this.habilitadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.habilitadoDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // personaBindingSource
+            // 
+            this.personaBindingSource.DataSource = typeof(Business.Entities.Persona);
             // 
             // tsPersonas
             // 
@@ -184,90 +281,6 @@
             this.tsbEliminar.Text = "eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // personaBindingSource
-            // 
-            this.personaBindingSource.DataSource = typeof(Business.Entities.Persona);
-            // 
-            // legajoDataGridViewTextBoxColumn
-            // 
-            this.legajoDataGridViewTextBoxColumn.DataPropertyName = "Legajo";
-            this.legajoDataGridViewTextBoxColumn.HeaderText = "Legajo";
-            this.legajoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.legajoDataGridViewTextBoxColumn.Name = "legajoDataGridViewTextBoxColumn";
-            this.legajoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nombreUsuarioDataGridViewTextBoxColumn
-            // 
-            this.nombreUsuarioDataGridViewTextBoxColumn.DataPropertyName = "NombreUsuario";
-            this.nombreUsuarioDataGridViewTextBoxColumn.HeaderText = "Nombre de Usuario";
-            this.nombreUsuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreUsuarioDataGridViewTextBoxColumn.Name = "nombreUsuarioDataGridViewTextBoxColumn";
-            this.nombreUsuarioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
-            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fechaNacimientoDataGridViewTextBoxColumn
-            // 
-            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha de Nacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
-            this.fechaNacimientoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iDPlanDataGridViewTextBoxColumn
-            // 
-            this.iDPlanDataGridViewTextBoxColumn.DataPropertyName = "IDPlan";
-            this.iDPlanDataGridViewTextBoxColumn.HeaderText = "Plan";
-            this.iDPlanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDPlanDataGridViewTextBoxColumn.Name = "iDPlanDataGridViewTextBoxColumn";
-            this.iDPlanDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // habilitadoDataGridViewCheckBoxColumn
-            // 
-            this.habilitadoDataGridViewCheckBoxColumn.DataPropertyName = "Habilitado";
-            this.habilitadoDataGridViewCheckBoxColumn.HeaderText = "Habilitado";
-            this.habilitadoDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.habilitadoDataGridViewCheckBoxColumn.Name = "habilitadoDataGridViewCheckBoxColumn";
-            this.habilitadoDataGridViewCheckBoxColumn.Width = 125;
-            // 
             // Personas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,9 +297,9 @@
             this.tcPersonas.PerformLayout();
             this.tlPersonas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
             this.tsPersonas.ResumeLayout(false);
             this.tsPersonas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

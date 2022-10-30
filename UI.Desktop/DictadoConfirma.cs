@@ -35,7 +35,7 @@ namespace UI.Desktop
             Sesion = sesion;
 
             InscripcionLogic il = new InscripcionLogic();
-            CursoActual = il.GetCursoByComisionMateriaAnio(idPlan, idComision);
+            CursoActual = il.GetCursoByComisionMateriaAnio(idComision, idMateria);
             PlanLogic pl = new PlanLogic();
             PlanActual = pl.GetOne(idPlan);
             ComisionLogic cl = new ComisionLogic();
