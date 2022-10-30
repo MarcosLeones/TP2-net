@@ -38,11 +38,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblPlan = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -78,12 +77,9 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.label12, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label14, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtLegajo, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
@@ -93,13 +89,15 @@
             this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtRepetirClave, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtTelefono, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.cbTipoPersona, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.cbPlanes, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.dtpFechaNacimiento, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtTelefono, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblPlan, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.cbPlanes, 3, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -198,21 +196,11 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(482, 300);
+            this.label10.Location = new System.Drawing.Point(482, 244);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 16);
             this.label10.TabIndex = 9;
             this.label10.Text = "Telefono";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(474, 244);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 16);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Habilitado";
             // 
             // label12
             // 
@@ -244,15 +232,15 @@
             this.label14.TabIndex = 13;
             this.label14.Text = "Fecha de Nacimiento";
             // 
-            // label11
+            // lblPlan
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(509, 356);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 16);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Plan";
+            this.lblPlan.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblPlan.AutoSize = true;
+            this.lblPlan.Location = new System.Drawing.Point(509, 356);
+            this.lblPlan.Name = "lblPlan";
+            this.lblPlan.Size = new System.Drawing.Size(34, 16);
+            this.lblPlan.TabIndex = 10;
+            this.lblPlan.Text = "Plan";
             // 
             // txtID
             // 
@@ -333,7 +321,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefono.Location = new System.Drawing.Point(549, 297);
+            this.txtTelefono.Location = new System.Drawing.Point(549, 241);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(228, 22);
             this.txtTelefono.TabIndex = 25;
@@ -360,7 +348,7 @@
             // 
             this.chkHabilitado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(549, 242);
+            this.chkHabilitado.Location = new System.Drawing.Point(549, 298);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(228, 20);
             this.chkHabilitado.TabIndex = 28;
@@ -424,11 +412,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtID;

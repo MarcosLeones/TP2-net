@@ -17,14 +17,16 @@ namespace UI.Desktop
     { 
 
         public Persona PersonaActual { get; set; }
+        private bool isDocente;
 
-        public PersonaDesktop(ModoForm modo) : this() { Modo = modo; }
+        public PersonaDesktop(ModoForm modo, bool docente) : this() { Modo = modo; isDocente = docente; }
 
-        public PersonaDesktop(int ID, ModoForm modo) : this()
+        public PersonaDesktop(int ID, ModoForm modo, bool docente) : this()
         {
             Modo = modo;
             PersonaLogic pl = new PersonaLogic();
             PersonaActual = pl.GetOne(ID);
+            isDocente = docente;
             MapearDeDatos();
         }
         public PersonaDesktop()
@@ -148,8 +150,18 @@ namespace UI.Desktop
         {
             if (Validar())
             {
-                GuardarCambios();
-                 Close();
+                try
+                {
+                    GuardarCambios();
+                }
+                catch (Exception ex)
+                {
+                    Notificar("ERROR", ex.Message + "\nNo se ha podido completar la acción.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    Close();
+                }
             }
         }
 
@@ -175,6 +187,19 @@ namespace UI.Desktop
             {
                 this.cbTipoPersona.SelectedItem = this.PersonaActual.TipoPersona;
             }
+
+            if (isDocente) { 
+                this.cbTipoPersona.SelectedItem = Persona.TiposPersonas.Docente;
+                this.cbPlanes.Enabled = false;
+                this.cbPlanes.Visible = false;
+                this.lblPlan.Visible = false;
+            }
+            else
+            {
+                this.cbTipoPersona.SelectedItem = Persona.TiposPersonas.Alumno;
+            }
+                
+            this.cbTipoPersona.Enabled = false;
         }
     }
 }

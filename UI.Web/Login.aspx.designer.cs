@@ -11,89 +11,80 @@ namespace UI.Web
 {
 
 
-    public partial class WebForm2
+    public partial class Login
     {
 
         /// <summary>
-        /// descripcionLabel control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descripcionLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// descripcionTextBox control.
+        /// usuarioLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
+        protected global::System.Web.UI.WebControls.Label usuarioLabel;
 
         /// <summary>
-        /// descripcionValidator control.
+        /// usuarioTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator descripcionValidator;
+        protected global::System.Web.UI.WebControls.TextBox usuarioTextBox;
 
         /// <summary>
-        /// idEspecialidadLabel control.
+        /// usuarioValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idEspecialidadLabel;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usuarioValidator;
 
         /// <summary>
-        /// especialidadDropDown control.
+        /// passwordLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList especialidadDropDown;
+        protected global::System.Web.UI.WebControls.Label passwordLabel;
 
         /// <summary>
-        /// ObjectDataSource1 control.
+        /// passwordTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
 
         /// <summary>
-        /// idEspecialidadTextBox control.
+        /// passwordValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idEspecialidadTextBox;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passwordValidator;
 
         /// <summary>
-        /// idEspecialidadValidator control.
+        /// ingresarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator idEspecialidadValidator;
-
-        /// <summary>
-        /// idEspecialidadIntValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator idEspecialidadIntValidator;
+        protected global::System.Web.UI.WebControls.Button ingresarButton;
 
         /// <summary>
         /// formValidationSummary control.
@@ -103,5 +94,14 @@ namespace UI.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary formValidationSummary;
+
+        /// <summary>
+        /// mensajeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mensajeLabel;
     }
 }
