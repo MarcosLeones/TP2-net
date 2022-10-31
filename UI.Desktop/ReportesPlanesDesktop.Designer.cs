@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesPlanesDesktop));
             this.dgvReportePlanes = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.cbReportesPlanes = new System.Windows.Forms.ToolStripComboBox();
+            this.btnExportPDF = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.Button();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportePlanes)).BeginInit();
@@ -67,6 +69,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -74,7 +77,8 @@
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cbReportesPlanes});
+            this.cbReportesPlanes,
+            this.btnExportPDF});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 45);
@@ -87,6 +91,18 @@
             this.cbReportesPlanes.Size = new System.Drawing.Size(121, 45);
             this.cbReportesPlanes.Text = "--Selecione Plan--";
             this.cbReportesPlanes.SelectedIndexChanged += new System.EventHandler(this.cbReportesPlanes_SelectedIndexChanged);
+            // 
+            // btnExportPDF
+            // 
+            this.btnExportPDF.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnExportPDF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnExportPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnExportPDF.Image")));
+            this.btnExportPDF.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExportPDF.MergeAction = System.Windows.Forms.MergeAction.Insert;
+            this.btnExportPDF.Name = "btnExportPDF";
+            this.btnExportPDF.Size = new System.Drawing.Size(23, 42);
+            this.btnExportPDF.Text = "Exportar PDF";
+            this.btnExportPDF.Click += new System.EventHandler(this.btnExportPDF_Click);
             // 
             // btnSalir
             // 
@@ -141,5 +157,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripComboBox cbReportesPlanes;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ToolStripButton btnExportPDF;
     }
 }
