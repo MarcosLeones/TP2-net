@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
+using System.Web.Security;
 
 namespace UI.Web
 {
@@ -31,6 +32,7 @@ namespace UI.Web
 
                     if (p.TipoPersona == Persona.TiposPersonas.Docente)
                     {
+                        FormsAuthentication.RedirectFromLoginPage(usuarioTextBox.Text, true);
                         Response.Redirect("~/Default.aspx");
                     }
                     else
