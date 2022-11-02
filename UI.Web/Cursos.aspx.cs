@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Util;
+using System.Data;
 
 namespace UI.Web
 {
@@ -31,7 +33,62 @@ namespace UI.Web
 
         protected override void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            DataTable table = new DataTable("cursosDT");
+            DataColumn column;
+            DataRow row;
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "IDCurso";
+            column.ReadOnly = true;
+            column.Unique = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("string");
+            column.ColumnName = "Descripcion";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "AnioCalendario";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "Cupo";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("string");
+            column.ColumnName = "Materia";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("string");
+            column.ColumnName = "Comision";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
+
+            List<ContenedorCurso> cursos = this.Logic.GetCursosCompletos();
+
+            foreach (ContenedorCurso c in cursos)
+            {
+                row = table.NewRow();
+                row["IDCurso"] = c.Curso.ID;
+                row["Descripcion"] = c.Curso.Descripcion;
+                row["AnioCalendario"] = c.Curso.AnioCalendario;
+                row["Cupo"] = c.Curso.cupo;
+                row["Materia"] = c.Materia.Descripcion;
+                row["Comision"] = c.Comision.Descripcion;
+                table.Rows.Add(row);
+            }
+
+            this.gridView.DataSource = table;
             this.gridView.DataBind();
         }
 

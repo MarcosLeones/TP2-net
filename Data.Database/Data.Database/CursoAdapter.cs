@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Util;
 
 namespace Data.Database
 {
@@ -178,7 +179,7 @@ namespace Data.Database
 
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO cursos (anio_calendario, id_materia, id_comision, cupo, descripcion) VALUES (@anio, @mat, @com, @cupo, @descripcion) select @@identity", sqlConn);
 
-                 cmdSave.Parameters.Add("@anio", SqlDbType.Int).Value = curso.AnioCalendario;
+                cmdSave.Parameters.Add("@anio", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@mat", SqlDbType.Int).Value = curso.IDMateria;
                 cmdSave.Parameters.Add("@com", SqlDbType.Int).Value = curso.IDComision;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.cupo;
@@ -239,6 +240,30 @@ namespace Data.Database
             }
 
             return curso;
+        }
+
+
+        public List<ContenedorCurso> GetCursosCompletos()
+        {
+            List<ContenedorCurso> lista = new List<ContenedorCurso>();
+
+            List<Curso> cursos = this.GetAll();
+            MateriaAdapter materiaAdapter = new MateriaAdapter();
+            ComisionAdapter comisionAdapter = new ComisionAdapter();
+
+            foreach(Curso cur in cursos)
+            {  
+                Materia mat = materiaAdapter.GetOne(cur.IDMateria);
+                Comision comi = comisionAdapter.GetOne(cur.IDComision);
+
+                ContenedorCurso cw = new ContenedorCurso();
+                cw.Curso = cur;
+                cw.Materia = mat;
+                cw.Comision = comi;
+                lista.Add(cw);
+            }
+
+            return lista;
         }
 
     }
