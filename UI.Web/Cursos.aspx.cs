@@ -34,52 +34,21 @@ namespace UI.Web
         protected override void LoadGrid()
         {
             DataTable table = new DataTable("cursosDT");
-            DataColumn column;
-            DataRow row;
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "IDCurso";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Descripcion", typeof(string));
+            table.Columns.Add("AnioCalendario", typeof(int));
+            table.Columns.Add("Cupo", typeof(int));
+            table.Columns.Add("Materia", typeof(string));
+            table.Columns.Add("Comision", typeof(string));
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("string");
-            column.ColumnName = "Descripcion";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "AnioCalendario";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Cupo";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("string");
-            column.ColumnName = "Materia";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("string");
-            column.ColumnName = "Comision";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
 
             List<ContenedorCurso> cursos = this.Logic.GetCursosCompletos();
 
             foreach (ContenedorCurso c in cursos)
             {
-                row = table.NewRow();
-                row["IDCurso"] = c.Curso.ID;
+                DataRow row = table.NewRow();
+                row["ID"] = c.Curso.ID;
                 row["Descripcion"] = c.Curso.Descripcion;
                 row["AnioCalendario"] = c.Curso.AnioCalendario;
                 row["Cupo"] = c.Curso.cupo;
