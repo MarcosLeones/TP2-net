@@ -6,12 +6,14 @@
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" 
             DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
             <Columns>
+                
                  <asp:BoundField HeaderText="Descripción" DataField="Descripcion" />
                  <asp:BoundField HeaderText="Cupo" DataField="Cupo" />
                  <asp:BoundField HeaderText="Año" DataField="AnioCalendario" />
-                 <asp:BoundField HeaderText="Comision" DataField="IDComision" />
-                 <asp:BoundField HeaderText="Materia" DataField="IDMateria" />
+                 <asp:BoundField HeaderText="Comision" DataField="Comision" />
+                 <asp:BoundField HeaderText="Materia" DataField="Materia" />
                  <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
+                
             </Columns>
         </asp:GridView>  
     </asp:Panel>

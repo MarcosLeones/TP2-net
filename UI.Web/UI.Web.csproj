@@ -177,6 +177,10 @@
       <Project>{42054b00-7375-4754-9ebc-2dbe9a2945b2}</Project>
       <Name>Business.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{ecf1e5e2-abfc-4ab7-baa8-be6ee338fa2d}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

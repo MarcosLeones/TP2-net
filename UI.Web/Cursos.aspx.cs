@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Util;
+using System.Data;
 
 namespace UI.Web
 {
@@ -31,7 +33,31 @@ namespace UI.Web
 
         protected override void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            DataTable table = new DataTable("cursosDT");
+
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Descripcion", typeof(string));
+            table.Columns.Add("AnioCalendario", typeof(int));
+            table.Columns.Add("Cupo", typeof(int));
+            table.Columns.Add("Materia", typeof(string));
+            table.Columns.Add("Comision", typeof(string));
+
+
+            List<ContenedorCurso> cursos = this.Logic.GetCursosCompletos();
+
+            foreach (ContenedorCurso c in cursos)
+            {
+                DataRow row = table.NewRow();
+                row["ID"] = c.Curso.ID;
+                row["Descripcion"] = c.Curso.Descripcion;
+                row["AnioCalendario"] = c.Curso.AnioCalendario;
+                row["Cupo"] = c.Curso.cupo;
+                row["Materia"] = c.Materia.Descripcion;
+                row["Comision"] = c.Comision.Descripcion;
+                table.Rows.Add(row);
+            }
+
+            this.gridView.DataSource = table;
             this.gridView.DataBind();
         }
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Util;
 
 namespace Business.Logic
 {
@@ -42,6 +43,11 @@ namespace Business.Logic
         public void Save(Curso curso)
         {
             CursoData.Save(curso);
+        }
+
+        public List<ContenedorCurso> GetCursosCompletos()
+        {
+            return CursoData.GetCursosCompletos();
         }
     }
 
