@@ -12,8 +12,11 @@ namespace UI.Web
 {
     public partial class Login : System.Web.UI.Page
     {
+
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -29,6 +32,7 @@ namespace UI.Web
 
                 if (p != null)
                 {
+                    Session["user"] = p.NombreUsuario;
 
                     if (p.TipoPersona == Persona.TiposPersonas.Docente)
                     {

@@ -11,7 +11,8 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] == null)
+                Response.Redirect("login.aspx", true);
         }
 
         protected void usuariosLinkButton_Click(object sender, EventArgs e)

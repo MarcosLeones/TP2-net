@@ -33,6 +33,9 @@ namespace UI.Web
 
         protected override void LoadGrid()
         {
+            if (Session["user"] == null)
+                Response.Redirect("login.aspx", true);
+
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
         }
