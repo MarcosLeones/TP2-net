@@ -33,6 +33,9 @@ namespace UI.Web
 
         protected override void LoadGrid()
         {
+            if (Session["user"] == null)
+                Response.Redirect("login.aspx", true);
+
             DataTable table = new DataTable("cursosDT");
 
             table.Columns.Add("ID", typeof(int));
